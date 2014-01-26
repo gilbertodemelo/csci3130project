@@ -6,7 +6,7 @@ $(document).ready(function() {
         // if username/password is empty
         if (username == '') {
             $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '15px');
+                $(this).css('top', '17px');
             });
             $(this).find('.error').fadeIn('fast', function() {
                 $(this).parent().find('.username').focus();

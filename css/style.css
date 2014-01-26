@@ -3,44 +3,42 @@
 	src: url('UnscreenMK.ttf');
 }
 body {
-    /*background: #3d4959;*/
-    background: url(../img/bg.jpg) top left repeat;
+    background: #d9d3c3;
     font-family: UnscreenMK, Arial, sans-serif;
     text-align: center;
     color: #fff;
 }
 
-
-.page-container {
+.login_form {
     margin: 50px auto 0 auto;
 }
-
+ 
 form {
     position: relative;
-    width: 305px;
-    margin: 15px auto 0 auto;
+    width: 305px; 
+    margin: 15px auto; /* between logo and input */
     text-align: center;
 }
 
 input {
-    width: 270px;
+    width: 270px; /* size of input */
     height: 42px;
     margin-top: 15px;
     padding: 0 15px;
-    background: #fbfdee; /* browsers that don't support rgba */
+    background: #fbfdee;
     background: rgba(45,45,45,.15);
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    border: 1px solid #3d3d3d; /* browsers that don't support rgba */
+    border: 1px solid #3d3d3d; 
     border: 1px solid rgba(255,255,255,.3);
     -moz-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
     -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
     box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
-    font-family: UnscreenMK,'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: UnscreenMK, Arial, sans-serif;
     font-size: 20px;
     color: #fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,.4);
     -o-transition: all .2s;
     -moz-transition: all .2s;
     -webkit-transition: all .2s;
@@ -66,15 +64,15 @@ input:focus {
 
 button {
     cursor: pointer;
-    width: 300px;
+    width: 300px; /* size of buttom */
     height: 44px;
-    margin-top: 25px;
+    margin-top: 25px; /* between input and buttom */
     padding: 0;
     background: #fe7970;
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
-    border: 1px solid #ff730e;
+    border: 1px solid #fdfbee;
     -moz-box-shadow:
         0 15px 30px 0 rgba(255,255,255,.25) inset,
         0 2px 7px 0 rgba(0,0,0,.2);
@@ -84,7 +82,7 @@ button {
     box-shadow:
         0 15px 30px 0 rgba(255,255,255,.25) inset,
         0 2px 7px 0 rgba(0,0,0,.2);
-    font-family: UnscreenMK,'PT Sans', Helvetica, Arial, sans-serif;
+    font-family: UnscreenMK, Arial, sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #fff;
@@ -125,10 +123,10 @@ button:active {
     display: none;
     position: absolute;
     top: 27px;
-    right: -55px;
+    right: -55px; 
     width: 40px;
     height: 40px;
-    background: #2d2d2d; /* browsers that don't support rgba */
+    background: #2d2d2d; 
     background: rgba(45,45,45,.25);
     -moz-border-radius: 8px;
     -webkit-border-radius: 8px;
@@ -136,7 +134,7 @@ button:active {
 }
 .error span {
     display: inline-block;
-    margin-left: 2px;
+    margin-left: 2px; /* error in the block */
     font-size: 40px;
     font-weight: 700;
     line-height: 40px;
@@ -146,3 +144,4 @@ button:active {
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
 }
+

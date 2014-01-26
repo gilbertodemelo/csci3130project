@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('.page-container form').submit(function() {
+    $('.login_form form').submit(function() {
         var username = $(this).find('.username').val();
         var password = $(this).find('.password').val();
         // if username/password is empty
@@ -15,7 +15,7 @@ $(document).ready(function() {
         }
         if (password == '') {
             $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '73px');
+                $(this).css('top', '75px');
             });
             $(this).find('.error').fadeIn('fast', function() {
                 $(this).parent().find('.password').focus();
@@ -24,7 +24,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.page-container form .username, .page-container form .password').keyup(function() {
+    $('.login_form form .username, .login_form form .password').keyup(function() {
         $(this).parent().find('.error').fadeOut('fast');
     });
 });

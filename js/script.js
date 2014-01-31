@@ -6,7 +6,7 @@ $(document).ready(function() {
         // if username/password is empty
         if (username == '') {
             $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '17px');
+                $(this).css('top', '16px');
             });
             $(this).find('.error').fadeIn('fast', function() {
                 $(this).parent().find('.username').focus();
@@ -15,7 +15,7 @@ $(document).ready(function() {
         }
         if (password == '') {
             $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '75px');
+                $(this).css('top', '70px');
             });
             $(this).find('.error').fadeIn('fast', function() {
                 $(this).parent().find('.password').focus();

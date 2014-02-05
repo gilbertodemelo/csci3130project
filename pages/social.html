@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" 
+		  content='application/xhtml+xml; charset = UTF-8'>
+	<!-- mobile specific -->
+	<meta name = "viewport" content = "width = device-width; 
+	 	   min-height = device-height; initial-scale = 1.0; 
+	 	   maximum-scale = 1.0; user=scalable = 0;"/>
+
+	<title>Social #1067</title>
+
+	<script type='text/javascript' src="../js/jquery.js"></script>
+	<script type='text/javascript' src='../js/social.js'></script>
+	<script src="../js/jquery.collapse.js"></script>
+	<script type='text/javascript' src="../js/modernizr.custom.js"></script>
+	<script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="../css/social.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+
+</head>
+<body onload = "window.scrollTo(0, 1)">
+	<div id="header">Friends</div>
+	<div id="search" style="display:none;">
+		<div class = "topbar">
+			New Friend
+			<button type = "submit" class = "hidemodal" >X</button>
+		</div>
+		<input type = "text" name = "friend_bar" placeholder= "friend name ..." id = "search_bar">
+		<button type = "submit" class = "function">add</button>
+		<script>var friend_num = 4;</script>
+	</div>
+
+	<div id="list">
+		<div>
+			<h3>
+				Friend1
+				<button type="submit" class = "delete">X</button>
+			</h3>
+			<div>
+				<div class="content">
+					<img src="../img/Bulbasaur.gif" alt=""/>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3>
+				Friend2
+				<button type="submit" class = "delete">X</button>
+			</h3>
+			<div>
+				<div class="content">
+					<p>blahblah...</p>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3>
+				Friend3
+				<button type="submit" class = "delete">X</button>
+			</h3>
+			<div>
+				<div class="content">
+					<p>blahblahblah</p>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h3>
+				Friend4
+				<button type="submit" class = "delete">X</button>
+			</h3>
+			<div>
+				<div class="content">
+					<p>blahblah...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+        $("#list").collapse({
+          query: "div h3"
+        });
+      </script>
+	<div class="container">
+		<nav id="bt-menu" class="bt-menu">
+			<a href="#" class="bt-menu-trigger">
+				<span>Menu</span>
+			</a>
+			<ul>
+				<li>
+					<a href="#search" class="bt-icon icon-zoom">Add</a>
+				</li>
+				<script type="text/javascript">
+					$(function(){
+					  $('#search').submit(function(e){
+					    return false;
+					  });
+					  
+					  $('.icon-zoom').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+					});			
+					</script>
+				<li>
+					<a href="#" class="bt-icon icon-flag">World Rank</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="main.html" class="bt-icon-alt icon-step-backward">Back</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</body>
+	<script src="../js/classie.js"></script>
+	<script src="../js/borderMenu.js"></script>
+</html>

@@ -11,41 +11,58 @@
 	<title>Profile #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
-	<script type='text/javascript' src='../js/motor.js'></script>
-	<script type='text/javascript' src='../js/motor.custom.js'></script>
+	<script type='text/javascript' src='../js/profile.js'></script>
+	<script type='text/javascript' src="../js/modernizr.custom.js"></script>
+	<script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
 
-	<link type="text/css" rel="stylesheet" href="../css/menuStyle.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/profile.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
 
 </head>
 <body onload = "window.scrollTo(0, 1)">
-	<div id = "topbar">Profile</div>
-	<div class="nav">
-		<div>
-			<input id="label-1" name="lida" type="radio" checked/>
-			<label for="label-1" id="item1">My Private Album</label>
-			<div class="content" id="a1">
-				<img src="../img/Azazel.png" />
-			</div>
-		</div>
-		<div>
-			<input id="label-2" name="lida" type="radio"/>
-			<label for="label-2" id="item2">Who am I?</label>
-			<div class="content" id="a2">
-				<p>
-					Azazel is a comic book character appearing in books published by Marvel Comics, in particular those featuring the X-Men. A mutant with the power of teleportation, he is the biological father of the X-Man Nightcrawler.
-				</p>
-			</div>
-		</div>
-		<div>
-			<input id="label-3" name="lida" type="radio"/>
-			<label for="label-3" id="item3">My Legends</label>
-			<div class="content" id="a3">
-				<p>
-					Azazel used to .....
-				</p>
-			</div>
+	<div id="header">My Account</div>
+	<div id="search" style="display:none;">
+		<div class = "topbar">
+			My Info
+			<button type = "submit" class = "hidemodal" >X</button>
 		</div>
 	</div>
 
+	<div class="container">
+		<div>
+			<img src="../img/Pikachu.gif" />
+		</div>
+		<nav id="bt-menu" class="bt-menu">
+			<a href="#" class="bt-menu-trigger">
+				<span>Menu</span>
+			</a>
+			<ul>
+				<li>
+					<a href="#search" class="bt-icon icon-user-outline">My Info</a>
+				</li>
+				<script type="text/javascript">
+					$(function(){
+					  $('#search').submit(function(e){
+					    return false;
+					  });
+					  
+					  $('.icon-user-outline').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+					});			
+					</script>
+
+				<li>
+					<a href="#" class="bt-icon icon-bubble">Recent</a>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<a href="main.html" class="bt-icon-alt icon-step-backward">Back</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<!-- /container -->
 </body>
+	<script src="../js/classie.js"></script>
+	<script src="../js/borderMenu.js"></script>
 </html>

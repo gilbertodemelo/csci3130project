@@ -18,9 +18,30 @@
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
 
 </head>
-<body onload = "window.scrollTo(0, 1)">
+<body onload = "window.scrollTo(0, 1)" >
+	<script>
+		 var x=document.getElementById("pos");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude;	
+  }	
+		 
+	</script>
+
 	<div id="header">World Map</div>
 	<div class="container">
+		<div>
+			<p id = "pos"></p>
+		</div>
 		<nav id="bt-menu" class="bt-menu">
 			<a href="#" class="bt-menu-trigger">Menu</a>
 			<ul>

@@ -15,7 +15,9 @@
 	box-sizing: border-box;
 }
 body {
-	background: #d2d1cd; /* background color, icon color */
+	/*background: #d2d1cd; */
+		background-image: url(../img/map.jpg);
+		background-repeat:no-repeat;
 }
 #header {
 	height: 55px;

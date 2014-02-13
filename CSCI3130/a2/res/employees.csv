@@ -1,0 +1,6 @@
+#format : employee id (int), name (string), position (string), department (string)
+1,"John Smith","Creative Director","Events"
+2,"Dorothy Kaustenbauer","Sales Representative","Sales"
+3,"Dinesh Gupta","Promotional Manager","Events"
+4,"John Smith","Groundskeeper","Operations"
+5,"Greta Nolan","Accountant","Finance"

@@ -1,0 +1,22 @@
+import java.util.ArrayList;
+
+public class Game
+{
+	ArrayList<Character> randomCharacters;
+	ArrayList<Character> usedCharacters;
+	ArrayList<User> users;
+	
+	public Game()
+	{
+		randomCharacters = new ArrayList<Character>();
+		users = new ArrayList<User>();
+	}
+	
+	public void randomAssign()
+	{
+		for(Character c: randomCharacters)
+		{
+			
+		}
+	}
+}

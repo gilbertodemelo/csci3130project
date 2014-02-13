@@ -1,0 +1,127 @@
+<project name="CSCI3130A2" default="dist" basedir=".">
+
+    <description>
+
+        Base build.xml file for CSCI 3130 Assignment 2
+    </description>
+
+  <!-- set global properties for this build -->
+
+  <property name="src" location="src"/>
+
+  <property name="build" location="build"/>
+
+  <property name="lib"  location="lib"/>
+
+  <property name="dist"  location="dist"/>
+
+  <property name="data"  location="res"/>
+
+  <property name="Test"  location="Test"/>
+
+  <property name="main.class"  value="A2Main"/>
+
+
+  <target name="init">
+
+    <!-- Create the time stamp -->
+
+    <tstamp/>
+
+    <!-- Create the build directory structure used by compile -->
+
+    <mkdir dir="${build}"/>
+  </target>
+
+
+  <target name="compile" depends="init"
+        description="compile the source " >
+
+    <!-- Compile the java code from ${src} into ${build} -->
+
+    <javac srcdir="${src}" destdir="${build}">
+
+      <classpath>
+
+	<fileset dir="${lib}" includes="*.jar" />
+
+      </classpath>
+
+    </javac>
+
+  </target>
+
+
+  <target name="dist" depends="compile"
+        description="generate the distribution" >
+
+    <!-- Create the distribution directory -->
+
+    <mkdir dir="${dist}"/>
+
+
+    <!-- Put everything in ${build} into the CSCI3130A2-${DSTAMP}.jar file -->
+
+    <jar jarfile="${dist}/CSCI3130A2-${DSTAMP}.jar" basedir="${build}">
+
+      <manifest>
+
+	<attribute name="built-by" value="${user.name}" />
+
+	<attribute name="Main-Class" value="${main.class}" />
+
+      </manifest>
+
+      <zipgroupfileset dir="${lib}" includes="*.jar" />
+
+    </jar>
+
+
+    <!-- Copy data files -->
+
+    <mkdir dir="${dist}/res" />
+
+    <copy todir="${dist}/res">
+
+      <fileset dir="${data}" />
+
+    </copy>
+
+  </target>
+
+  <target name="test" depends="compile"	description="test files">
+    <mkdir dir="${test}"/>
+    <javac srcdir="${Test}" destdir="${build}">
+
+      <classpath>
+
+	<fileset dir="${lib}" includes="*.jar" />
+
+      </classpath>
+
+    </javac>
+  </target>
+  <target name="docs" depends="compile"	description="doc files">
+    <mkdir dir="${docs}"/>
+    <javadoc jdoc="${src}" dest="${build}">
+    <classpath>
+
+      <fileset dir="${lib}" includes="*.jar" />
+
+    </classpath>
+
+    </javadoc>
+  </target>
+  <target name="clean"
+        description="clean up" >
+
+    <!-- Delete the ${build} and ${dist} directory trees -->
+
+    <delete dir="${build}"/>
+
+    <delete dir="${dist}"/>
+
+    <delete dir="${test}"/>
+    <delete dir="${docs}"/>
+  </target>
+</project>

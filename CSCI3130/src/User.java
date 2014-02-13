@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class User
 {
 	//attributes
@@ -7,8 +5,6 @@ public class User
 	private String password;
 	private int totalPoints; //total points accumulated by the user since registering
 	private int accountID;
-	private Character assigned;
-	private static HashMap<String, String> userPass; //hasmap containing username/password combos
 	//constructor
 	public User(String username, String pass, int tp, int a)
 	{
@@ -16,8 +12,6 @@ public class User
 		password = pass;
 		totalPoints = tp;
 		accountID = a;
-		assigned = null;
-		userPass.put(user, password);
 	}
 	//get and set methods 
 	public int getTotalPoints() {
@@ -50,13 +44,10 @@ public class User
 
 	public void setPassword(String password) {
 		this.password = password;
+	}	
+	//to string method
+	public String toString()
+	{
+		return "Username: "+user+", Password: "+password+", Points: "+totalPoints+", Account ID: "+accountID;
 	}
-	public Character getAssigned() {
-		return assigned;
-	}
-	public void setAssigned(Character assigned) {
-		this.assigned = assigned;
-	}
-	
-	
 }

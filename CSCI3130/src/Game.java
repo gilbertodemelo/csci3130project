@@ -20,8 +20,8 @@ public class Game
 		{
 			random = (int)(Math.random()*randomCharacters.size());
 			Character c = randomCharacters.get(random);
-			if(users.get(i).getAssigned() == null){
-				users.get(i).setAssigned(c);
+			if(true){
+				
 				usedCharacters.add(c);
 				randomCharacters.remove(c);
 			}

@@ -12,77 +12,80 @@
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
 	<script type='text/javascript' src='../js/social.js'></script>
+
 	<script src="../js/jquery.collapse.js"></script>
 	<script type='text/javascript' src="../js/modernizr.custom.js"></script>
 	<script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
 
 	<link type="text/css" rel="stylesheet" href="../css/social.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+	<script>
+		function add() {
+			var friend = search_form.friend_bar.value;
+			
+			$('#search p').replaceWith('');
+
+			if (friend === "Vicky" || friend === "Tsubasa" || 
+				friend === "Gilberto" || friend === "Richard") {
+				
+				$('#search').append('<p><br/>'+friend+' exists already!</p>').css({
+					color: 'rgba(255, 0, 0, 1)'
+				});				
+
+				return false;
+			}
+
+			if (friend === "Tester") {		
+				$('#search').append('<p><br/>'+friend+' added!</p>').css({
+					color: '#fff'
+				});
+
+				var new_friend = "<div>" +
+					"<h3 class = \"new\">" + friend +
+					"<button class = \"delete\">X</button>" +
+					"</h3>" +
+					"<div class=\"content\">" +
+					"<p>Test Friends Addition</p>" + 
+					"</div>" +
+					"</div>";
+				$('#list').append(new_friend);
+				// send to databas and refresh
+				$("#list").collapse({
+					query: "div h3.new"
+				});
+
+				$('button.delete').click(function() {
+					var d1 = $(this).parentsUntil('#list');
+					var d2 = d1.find('.content');
+					d1.remove();
+					d2.remove();
+					//remove from database
+				});
+
+				return truel;
+			} else {
+				$('#search').append('<p><br/>'+friend+' not found!</p>').css({
+					color: 'rgba(255, 0, 0, 1)'
+				});
+
+				return false;
+			}
+	}
+	</script>
 
 </head>
 <body onload = "window.scrollTo(0, 1)">
 	<div id="header">Friends</div>
-	<div id="search" style="display:none;">
+	<form name = "search_form" id="search" style="display:none;">
 		<div class = "topbar">
 			New Friend
 			<button type = "submit" class = "hidemodal" >X</button>
 		</div>
 		<input type = "text" name = "friend_bar" placeholder= "friend name ..." id = "search_bar">
-		<button type = "submit" class = "function">add</button>
-		<script>var friend_num = 4;</script>
-	</div>
+		<input type = "button" class = "function" value = "add"  onclick="add()"/>
+	</form>
+	<div id="list"></div>
 
-	<div id="list">
-		<div>
-			<h3>
-				Friend1
-				<button type="submit" class = "delete">X</button>
-			</h3>
-			<div>
-				<div class="content">
-					<img src="../img/Bulbasaur.gif" alt=""/>
-				</div>
-			</div>
-		</div>
-		<div>
-			<h3>
-				Friend2
-				<button type="submit" class = "delete">X</button>
-			</h3>
-			<div>
-				<div class="content">
-					<p>blahblah...</p>
-				</div>
-			</div>
-		</div>
-		<div>
-			<h3>
-				Friend3
-				<button type="submit" class = "delete">X</button>
-			</h3>
-			<div>
-				<div class="content">
-					<p>blahblahblah</p>
-				</div>
-			</div>
-		</div>
-		<div>
-			<h3>
-				Friend4
-				<button type="submit" class = "delete">X</button>
-			</h3>
-			<div>
-				<div class="content">
-					<p>blahblah...</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script>
-        $("#list").collapse({
-          query: "div h3"
-        });
-      </script>
 	<div class="container">
 		<nav id="bt-menu" class="bt-menu">
 			<a href="#" class="bt-menu-trigger">
@@ -98,7 +101,7 @@
 					    return false;
 					  });
 					  
-					  $('.icon-zoom').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+					  $('.icon-zoom').leanModal({ top: 80, overlay: 0.45, closeButton: ".hidemodal" });
 					});			
 					</script>
 				<li>

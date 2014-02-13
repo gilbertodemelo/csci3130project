@@ -22,6 +22,10 @@ form {
     margin: 0px auto; /* between logo and input */
     text-align: center; /* letter-spacing: .2em */
 }
+form p {
+    color: rgba(255, 0, 0, 1);
+    font-size: 20px;
+}
 input {
     width: 180px; /* size of input */
     height: 36px;

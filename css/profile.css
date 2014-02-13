@@ -15,7 +15,8 @@
 	box-sizing: border-box;
 }
 body {
-	background: #d6d4c8; /* background color, icon color */
+	background: #d6d4c8;
+	font-family: UnscreenMK;
 }
 #header {
 	height: 55px;
@@ -37,31 +38,63 @@ body {
 /* Image Adjust Later */
 img {
 	margin-top: 10px;
-	margin-left: 30px;
+	margin-left: -50px;
 }
+
+.container p {
+  font-size: 20px; 
+  font-family: AT;
+  /*letter-spacing: 0.1em;*/
+  font-weight: bold;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+
 #search {
-	height: 200px;
-	width: 200px;
-	background-color: rgba(0, 0, 0, 0.8);
-	border-radius: 10px;
-	-moz-box-shadow: 0 15px 35px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
-	-webkit-box-shadow: 0 15px 35px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
-	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .2);
-	text-align: center;
+  height: 400px;
+  width: 306px;
+  background-color: rgba(0, 0, 0, 0.95);
+  border: 3px solid #000;
+  border-radius: 10px;
+  -moz-box-shadow: 0 15px 35px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 15px 35px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .2);
+  text-align: center;
+  font-family: UnscreenMK;
 }
+
+#search p {
+	font-size: 20px;
+	text-align: left;
+	margin-bottom: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
 .topbar {
-	background-color: rgba(56, 94, 242, 0.6);
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	height: 30px;
-	width: 200px;
-	padding-left: 30px;
-	padding-top: 5px;
-	-moz-box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
-	-webkit-box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
-	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .2);
-	text-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+  background-color: rgba(85, 70, 109, 0.8);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: UnscreenMK;
+  height: 50px;
+  width: 299px;
+  border-top: 3px solid #000;
+  margin-top: -3px;
+  padding-left: 30px;
+  padding-top: 5px;
+  color: #fff;
+  font-size: 30px;
+  letter-spacing: 0.1em
+  font-family:AT;
+  -moz-box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 15px 30px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .2);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, .4);
+  margin-bottom: 10px;
 }
+
 .hidemodal {
 	float: right;
 	z-index: 10;
@@ -81,8 +114,9 @@ img {
 	-webkit-box-shadow: 0 15px 35px 0 rgba(255, 255, 255, .25) inset, 0 2px 7px 0 rgba(0, 0, 0, .2);
 	box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .2);
 }
-.container {
-	padding: 80px;
+.container img{
+	padding-top: 60px;
+	margin-left: 40px;
 }
 .bt-menu {
 	position: fixed;

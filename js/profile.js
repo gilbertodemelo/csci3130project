@@ -1,14 +1,21 @@
 $(document).ready(function() {
+    // var uname = localStorage.getItem('uname');
+    var pid = localStorage.getItem('pid');
+    var uid = localStorage.getItem('uid');
 
-	var user = {
-		'name' : "Derek Reilly",
-		'points' : 100,
-
-		'display' : function() {
-			$('#search').append('<p>Username: ' + this.name + '</p>' +
-		                '<p>Points:' + this.points + '</p>').css('color', '#fff');	
-		}	
-	}
-	
-	user.display();
+    $.ajax({
+        type: 'POST',
+        url:  '../mySQL.php',
+        data: {
+            func: 'get_user_info',
+            uid: uid,
+            pid: pid
+        },
+        dataType: 'text',
+        success: function(response) {
+            $('#container').html(response);
+        }
+    });
+    
+    load_page();
 });

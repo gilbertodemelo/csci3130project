@@ -11,26 +11,23 @@
 	<title>Generic Game #1067</title>
 
 	<script type='text/javascript' src="js/jquery.js"></script>
-	
 	<script type='text/javascript' src='js/index.js'></script>
-
 	<link type="text/css" rel="stylesheet" href="css/index.css"/>
 
 </head>
 <body onload = "window.scrollTo(0, 1)">
-	<div class="login_form">
-		<img src = 'img/logo.gif'/>
+	<div class = "login_form">
+		<img src = 'img/pikachu.gif'/>
 		<!-- login form -->
-		<form action="pages/main.html" method="post">
-			<input type="text" name="username" class="username" placeholder="Username">
-			<input type="password" name="password" class="password" placeholder="Password">
+		<form action = "pages/main.html" method = "post">
+			<input type = "text" name = "username" class = "username" placeholder = "Username">
+			<input type = "password" name = "password" class = "password" placeholder = "Password">
 			<div id = "buttom">
-				<button type="submit" id = "login">Login</button>
-				<button type="button" onclick="window.open('./pages/register.html')" id = "register">Sign Up</button>
+				<button type = "submit" id = "login">Login</button>
+				<button type = "button" onclick = "window.open('./pages/register.html')" id = "register">Sign Up</button>
 			</div>
-			<div class="error">
-				<span>+</span>
-			</div>
+			<br/>
+			<p id = "error"></p>
 		</form>
 	</div>
 </body>

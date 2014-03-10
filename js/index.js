@@ -1,59 +1,76 @@
 $(document).ready(function() {
 
-    function User(username, pwd) {
-        this.username = username;
-        this.pwd = pwd;
-    }
+	$('.login_form').submit(function() {
 
-    var user_list = [];
-    user_list.push(new User("Tester", "group14"));
+		var username = $('.username').val().toUpperCase();
+		var password = $('.password').val();
+		
+		window.localStorage.uname = username;
 
-    $('.login_form form').submit(function() {
-        var username = $(this).find('.username').val();
-        var password = $(this).find('.password').val();
-
-        $('form p').replaceWith('');
-        // if username/password is empty
-        if (username == '') {
-            $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '16px');
-            });
-            $(this).find('.error').fadeIn('fast', function() {
-                $(this).parent().find('.username').focus();
-            });
-            return false;
-        }
-        if (password == '') {
-            $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '70px');
-            });
-            $(this).find('.error').fadeIn('fast', function() {
-                $(this).parent().find('.password').focus();
-            });
-            return false;
-        }
-      
-        var user_found = false;
-        for (i = 0; i < user_list.length; i++) {
-            if (user_list[i].username === username) {
-                if (user_list[i].pwd === password) {
-                    return true;
-                }  else {
-                    $(this).append('<p><br/>Invalid Password : (</p>');
-                    return false;
+        $.ajax({
+                type: 'POST',
+                url:  'mySQL.php',
+                data: {
+                    func: 'get_user_id',
+                    uname: username
+                },
+                dataType: 'text',
+                success: function(response) {
+                    window.localStorage.uid = response;
                 }
+         });
 
-                user_found = true;
-            } 
-        }
+        $.ajax({
+                type: 'POST',
+                url:  'mySQL.php',
+                data: {
+                    func: 'get_pokemon_id',
+                    uid: localStorage.getItem('uid')
+                },
+                dataType: 'text',
+                success: function(response) {
+                    window.localStorage.pid = response;
+                }
+         });
 
-        if (!user_found)
-            $(this).append('<p><br/>Invalid Username : (</p>');
 
-        return user_found;
-    });
-
-    $('.login_form form .username, .login_form form .password').keyup(function() {
-        $(this).parent().find('.error').fadeOut('fast');
-    });
+		if (username == '' ) {
+			$('#error').html("username needed");
+			$('#error').fadeIn('fast');
+			return false;
+		} else if (password == '') {
+			$('#error').html("password needed");
+			$('#error').fadeIn('fast');
+			return false;
+		} else {
+			$.ajax({
+                type: 'POST',
+                url:  'mySQL.php',
+                data: {
+                    func: 'login',
+                    uname: username,
+                    pwd: password
+                },
+                dataType: 'text',
+                success: function(response) {
+                    if (response === 'success') {
+                    	$('#error').html("success")
+                        $('#error').fadeIn('fast');
+						window.location = 'pages/main.html';
+                    } else {
+                    	$('#error').html("invalid username/password")
+                        $('#error').fadeIn('fast');
+                    }
+                }
+            });
+		}
+		return false;
+	});
+	
+	$('.username').keyup(function() {
+		$('#error').fadeOut('fast');
+	});
+	$('.password').keyup(function() {
+		$('#error').fadeOut('fast');
+	});
 });

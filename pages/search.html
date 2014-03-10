@@ -11,7 +11,7 @@
 	<title>Social #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
-	<script type='text/javascript' src="../js/social.js"></script>
+	<script type='text/javascript' src="../js/search.js"></script>
 	<script src="../js/jquery.collapse.js"></script>
 
 
@@ -22,9 +22,12 @@
 </head>
 <body onload = "window.scrollTo(0, 1)">
 	<div id = "header">Friend</div>
-	<div id = "list">
-	</div>
 	<div id = "container"></div>
+	<div id = "search_form">
+		<input type="text" id = "friend" placeholder = "friend...">
+		<button type="buttom" id = "search">add</button>
+		<div id="result"></div>
+	</div>
 	<nav id="bt-menu" class="bt-menu">
 
 		<a href="#" class="bt-menu-trigger">
@@ -32,10 +35,10 @@
 		</a>
 		<ul>
 			<li>
-				<a href="#" data-icon = "b">Friend List</a>
+				<a href="social.html" data-icon = "b">Friend List</a>
 			</li>
 			<li>
-				<a href="search.html" data-icon = "k">Search Friend</a>
+				<a href="#" data-icon = "k">Search Friend</a>
 			</li>
 			<li>
 				<a href="#" data-icon = "a">Rank</a>

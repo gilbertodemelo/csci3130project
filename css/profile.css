@@ -1,0 +1,21 @@
+#container {
+	color: rgb(90, 140, 219);
+}
+#container p {
+	color: #FAF898;
+}
+#header {
+	background-color: rgba(90, 140, 219, 0.8);
+}
+
+/* trigger color */
+.bt-menu-trigger span {
+	background-color: rgb(90, 140, 219); 
+}
+.bt-menu-trigger span:before,
+.bt-menu-trigger span:after {
+	background: rgb(90, 140, 219);
+}
+.bt-menu ul li a:before {
+	color: rgba(90, 140, 219, 1);
+}

@@ -1,0 +1,100 @@
+@font-face {
+	font-family: UnscreenMK;
+	src: url('UnscreenMK.ttf');
+}
+*,
+body {
+	margin: 0 0 0 0;
+}
+body {
+	background: #000;
+	font-family: UnscreenMK, Arial, sans-serif;
+	text-align: center;
+	color: #fff;
+}
+body p {
+	font-size: 20px;
+	color: rgba(255, 0, 0, 0.9);
+}
+.login_form {
+	margin: -30px auto 0 auto;
+}
+img {
+	margin-top: 40px;
+	width: 280px;
+	height: 240px;
+	align: center;
+}
+
+form {
+	position: relative;
+	width: 305px;
+	margin: 0px auto; /* between logo and input */
+	text-align: center; /* letter-spacing: .2em */
+}
+input {
+	width: 180px; /* size of input */
+	height: 36px;
+	margin-top: 15px;
+	padding: 0 15px;
+	background: #fbfdee;
+	background: rgba(45, 45, 45, .9);
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 3px solid #fff;
+	border: 3px solid rgba(255, 255, 255, .8);
+	font-family: UnscreenMK, Arial, sans-serif;
+	font-size: 20px; /* -webkit-letter-spacing: .15em */
+	color:#fff;
+	text-shadow: 0 1px 2px rgba(255, 255, 255, .4);
+	-o-transition: all .2s;
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+	-ms-transition: all .2s;
+}
+input:-moz-placeholder {
+	color: #fff;
+}
+input:-ms-input-placeholder {
+	color: #fff;
+}
+input::-webkit-input-placeholder {
+	color: #fff;
+}
+input:focus {
+	outline: none;
+	-moz-box-shadow: 0 2px 3px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 7px 0 rgba(255, 255, 255, 0.8);
+	-webkit-box-shadow: 0 2px 3px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 7px 0 rgba(255, 255, 255, 0.8);
+	box-shadow: 0 2px 3px 0 rgba(255, 255, 255, 0.5) inset, 0 2px 7px 0 rgba(255, 255, 255, 0.8);
+	background-color: #434544;
+}
+button {
+	cursor: pointer;
+	width: 107px; /* size of buttom */
+	height: 35px;
+	margin-top: 15px; /* between input and buttom */
+	padding: 0;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border: 3px solid #fdfbee;
+	font-family: UnscreenMK, Arial, sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	background-color: #fff;
+	color: #000;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+	-o-transition: all .2s;
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+	-ms-transition: all .2s;
+}
+button:active {
+	background-color: #CFCFCF;
+	border-color: #CFCFCF;
+}
+
+#error {
+	display: none;
+}

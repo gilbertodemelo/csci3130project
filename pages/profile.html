@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" 
+		  content='application/xhtml+xml; charset = UTF-8'>
+	<!-- mobile specific -->
+	<meta name = "viewport" content = "width = device-width; 
+	 	   min-height = device-height; initial-scale = 1.0; 
+	 	   maximum-scale = 1.0; user=scalable = 0;"/>
+
+	<title>Profile #1067</title>
+
+	<script type='text/javascript' src="../js/jquery.js"></script>
+	<script type='text/javascript' src='../js/profile.js'></script>
+
+	<link type="text/css" rel="stylesheet" href="../css/profile.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
+	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+	<script>
+	function load_character() {
+	     var pid = localStorage.getItem('pid');
+		 $.ajax({
+                type: 'POST',
+                url:  '../mySQL.php',
+                data: {
+                    func: 'get_pokemon_info',
+                    pid  : pid
+                },
+                dataType: 'text',
+                success: function(response) {
+                    $('#container').html(response);
+                }
+        });
+	}
+	</script>
+	<script>
+		function load_profile() {
+		    var pid = localStorage.getItem('pid');
+		    var uid = localStorage.getItem('uid');
+	        $.ajax({
+	            type: 'POST',
+	            url:  '../mySQL.php',
+	            data: {
+	                func: 'get_user_info',
+	                uid: uid,
+	                pid  : pid
+	            },
+	            dataType: 'text',
+	            success: function(response) {
+	                $('#container').html(response);
+	            }
+	        });
+	    }
+	</script>
+</head>
+<body onload = "window.scrollTo(0, 1)">
+	<div id = "header">My Account</div>
+	<div id = "container"></div>
+	<nav id="bt-menu" class="bt-menu">
+
+		<a href="#" class="bt-menu-trigger">
+			<span>Menu</span>
+		</a>
+		<ul>
+			<li>
+				<a href="#" data-icon = "r" onclick = "load_profile()">My Info</a>
+			</li>
+			<li>
+				<a href="#" data-icon = "t" onclick = "load_character()">Character Info</a>
+			</li>
+			<li>
+				<a href="#" data-icon = "d">Recent</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="main.html" data-icon = "i">Back</a>
+			</li>
+		</ul>
+	</nav>
+
+</body>
+<script src="../js/classie.js"></script>
+<script src="../js/borderMenu.js"></script>
+</html>

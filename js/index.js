@@ -1,51 +1,35 @@
 $(document).ready(function() {
 
-	$('.login_form').submit(function() {
+    $('.login_form').submit(function() {
 
-		var username = $('.username').val().toUpperCase();
-		var password = $('.password').val();
-		
-		window.localStorage.uname = username;
+        var username = $('.username').val().toUpperCase();
+        var password = $('.password').val();
 
         $.ajax({
-                type: 'POST',
-                url:  'mySQL.php',
-                data: {
-                    func: 'get_user_id',
-                    uname: username
-                },
-                dataType: 'text',
-                success: function(response) {
-                    window.localStorage.uid = response;
-                }
-         });
+            type: 'POST',
+            url: 'mySQL1.php',
+            data: {
+                func: 'get_user_id',
+                uname: username
+            },
+            dataType: 'text',
+            success: function(response) {
+                localStorage.setItem('uid', response);
+            }
+        });
 
-        $.ajax({
+        if (username == '') {
+            $('#error').append("username needed</br>");
+            $('#error').fadeIn('fast');
+            return false;
+        } else if (password == '') {
+            $('#error').html("password needed</br>");
+            $('#error').fadeIn('fast');
+            return false;
+        } else {
+            $.ajax({
                 type: 'POST',
-                url:  'mySQL.php',
-                data: {
-                    func: 'get_pokemon_id',
-                    uid: localStorage.getItem('uid')
-                },
-                dataType: 'text',
-                success: function(response) {
-                    window.localStorage.pid = response;
-                }
-         });
-
-
-		if (username == '' ) {
-			$('#error').html("username needed");
-			$('#error').fadeIn('fast');
-			return false;
-		} else if (password == '') {
-			$('#error').html("password needed");
-			$('#error').fadeIn('fast');
-			return false;
-		} else {
-			$.ajax({
-                type: 'POST',
-                url:  'mySQL.php',
+                url: 'mySQL1.php',
                 data: {
                     func: 'login',
                     uname: username,
@@ -53,24 +37,24 @@ $(document).ready(function() {
                 },
                 dataType: 'text',
                 success: function(response) {
-                    if (response === 'success') {
-                    	$('#error').html("success")
+                    if (response === 'true') {
+                        $('#error').html("success")
                         $('#error').fadeIn('fast');
-						window.location = 'pages/main.html';
+                        window.location = 'pages/main.html';
                     } else {
-                    	$('#error').html("invalid username/password")
+                        $('#error').html("invalid username/password<br/>")
                         $('#error').fadeIn('fast');
                     }
                 }
             });
-		}
-		return false;
-	});
-	
-	$('.username').keyup(function() {
-		$('#error').fadeOut('fast');
-	});
-	$('.password').keyup(function() {
-		$('#error').fadeOut('fast');
-	});
+        }
+        return false;
+    });
+
+    $('.username').keyup(function() {
+        $('#error').fadeOut('fast');
+    });
+    $('.password').keyup(function() {
+        $('#error').fadeOut('fast');
+    });
 });

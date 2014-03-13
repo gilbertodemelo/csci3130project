@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" 
+		  content='application/xhtml+xml; charset = UTF-8'>
+	<!-- mobile specific -->
+	<meta name = "viewport" content = "width = device-width; 
+	 	   min-height = device-height; initial-scale = 1.0; 
+	 	   maximum-scale = 1.0; user=scalable = 0;"/>
+
+	<title>Help #1067</title>
+
+	<script type='text/javascript' src="../js/jquery.js"></script>
+	<script type='text/javascript' src='../js/help.js'></script>
+	<script src="../js/modernizr.custom.63321.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="../css/help.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+</head>
+<body onload = "window.scrollTo(0, 1)">
+		<div class="container">		
+			<div class="fleft">
+				<select id="cd-dropdown" name="cd-dropdown" onchange ="alert()">
+					<option value="-1" selected>FQA</option>
+					<option value="1" class="icon-monkey">Game Intro</option>
+					<option value="2" class="icon-bear">How to play?</option>
+					<option value="3" class="icon-squirrel">How to gain points?</option>
+					<option value="4" class="icon-elephant">Who is Derek Reilly?</option>
+					<option value="5" class="icon-elephant">back</option>
+				</select>
+			</div>
+		</div>
+		<div class = "content">
+			<p>Hello World! This is the Frequent Question and Answer page</p>
+		</div>
+		<script type="text/javascript" src="../js/jquery.dropdown.js"></script>
+		<script type="text/javascript">
+			$( function() {
+				$( '#cd-dropdown' ).dropdown( {
+					gutter : 5
+				} );
+			});
+		</script>
+</body>
+</html>

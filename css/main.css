@@ -1,0 +1,24 @@
+#header {
+	background-color: rgba(84, 162, 240, 0.8);
+	margin-bottom: 0;
+}
+
+/* trigger color */
+.bt-menu-trigger span {
+	background-color: rgb(84, 162, 240);
+}
+.bt-menu-trigger span:before,
+.bt-menu-trigger span:after {
+	background: rgb(84, 162, 240);
+}
+.bt-menu ul li a:before {
+	color: rgba(84, 162, 240, 1);
+}
+body {
+	background-image: url("../img/maps/main.jpg");
+	background-repeat: cover;
+	bottom: 0;
+}
+img {
+	margin-top: 0px;
+}

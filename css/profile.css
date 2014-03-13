@@ -1,21 +1,25 @@
 #container {
-	color: rgb(90, 140, 219);
+	color: rgb(247, 116, 138);
 }
 #container p {
 	color: #FAF898;
 }
 #header {
-	background-color: rgba(90, 140, 219, 0.8);
+	background-color: rgba(247, 116, 138, 0.8);
 }
 
 /* trigger color */
 .bt-menu-trigger span {
-	background-color: rgb(90, 140, 219); 
+	background-color: rgb(247, 116, 138);
 }
 .bt-menu-trigger span:before,
 .bt-menu-trigger span:after {
-	background: rgb(90, 140, 219);
+	background: rgb(247, 116, 138);
 }
 .bt-menu ul li a:before {
-	color: rgba(90, 140, 219, 1);
+	color: rgba(247, 116, 138, 1);
+}
+img {
+	margin-left: 20px;
+	width: 300px;
 }

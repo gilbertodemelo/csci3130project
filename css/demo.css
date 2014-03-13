@@ -1,0 +1,46 @@
+@font-face {
+	font-family: UnscreenMK;
+	src: url('UnscreenMK.ttf');
+}
+@font-face {
+	font-family: AT;
+	src: url('AT.otf');
+}
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #000;
+	font-family: UnscreenMK, Arial, sans-serif;
+	color: #fff;
+	font-size: 20px;
+	color: #fff;
+	overflow: scroll;
+	overflow-x: hidden;
+	text-align: center;
+}
+
+.container {
+	width: 100%;
+	position: relative;
+}
+
+.fleft {
+	float: right;
+	width: 100%;
+}
+
+@media screen and (max-width: 730px){
+	.fleft {
+		width: 100%;
+		float: none;
+		text-align: center;
+	}
+} 

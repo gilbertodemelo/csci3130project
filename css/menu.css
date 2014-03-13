@@ -24,7 +24,8 @@ body {
 }
 #container {
 	font-size: 25px;
-	padding-top: 70px;
+	padding-top: 60px;
+	buttom: 10px;
 }
 #container div {
 	margin-left: 10px;
@@ -33,21 +34,13 @@ body {
 	margin-left: 20px;
 	margin-right: 10px;
 }
-
-.long p {
+.long p{
 	font-family: AT;
 	letter-spacing: 0.1em;
-	font-size: 20px;
+	font-size: 25px;
 	margin-left: 5px;
 	margin-right: 5px;
 }
-
-img {
-	width: 60%;
-	height: 60%;
-	text-align:center;
-}
-
 #header {
 	height: 55px;
 	border-bottom: 3px solid #fff;
@@ -74,6 +67,7 @@ img {
 	border-width: 0px;
 	border-style: solid;
 	border-color: rgba(225, 225, 225, 1); /* menu color */
+	z-index: 15;
 	background-color: rgba(0, 0, 0, 0);
 	-webkit-backface-visibility: hidden;
 	-webkit-transition: border-width 0.3s, background-color 0.3s, height 0s 0.3s;

@@ -1,7 +1,95 @@
+<!DOCTYPE html>
 <html>
-<head></head>
-<body>
-	<a href = 'profile.html'>Profile</a>
-	<a href = 'social.html'>Social</a>
+<head>
+	<meta http-equiv="Content-Type" 
+		  content='application/xhtml+xml; charset=UTF-8'>
+	<!-- mobile specific -->
+	<meta name="viewport" content="width=device-width; 
+	 	   min-height=device-height; initial-scale=1.0; 
+	 	   maximum-scale=1.0; user=scalable=0;"/>
+
+	<title>Main #1067</title>
+
+	<script type='text/javascript' src="../js/jquery.js"></script>
+	<script type='text/javascript' src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/jquery.taggd.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
+	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+	<link type="text/css" rel="stylesheet" href="../css/main.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/taggd.css" />
+
+	<script type="text/javascript">
+    var data     = [];
+    var settings = [];
+    </script>
+</head>
+
+<body onload="window.scrollTo(0, 1)">
+	<div id="header">World Map</div>
+	<img class="taggd" src="../img/maps/main.png" alt="photo" />
+	<script type="text/javascript">
+		var friend_list;
+		$.ajax({
+            type: 'POST',
+            url: '../mySQL2.php',
+            data: {
+                func: 'get_friend_info',
+                uid: localStorage.getItem('uid')
+            },
+            dataType: 'json',
+            success: function(response) {
+                friend_list = eval(response);
+				// localStorage.setItem('list', JSON.stringify(friend_list));
+				
+                var data_list = [];
+                for (var i in friend_list) {
+                	data_list.push({x:    friend_list[i].x, 
+                					y:    friend_list[i].y, 
+                					text: friend_list[i].nickname});
+                }
+
+		        data.push(data_list);
+		        settings.push({
+		            align:  { 'y': 'top' },
+		            offset: { 'top': 20 },
+
+		            'handlers': {
+		                'click': 'toggle'
+		            }
+		        });
+
+				$('.taggd').each(function(i, e) {
+		            var $e = $(e);
+
+		            $e.taggd(settings[i]);
+		            $e.taggd('items', data[i])
+		        });
+            }
+        });
+    </script>
+	<nav id="bt-menu" class="bt-menu">
+		<a href="#" class="bt-menu-trigger">
+			<span>Menu</span>
+		</a>
+		<ul>
+			<li>
+				<a href="profile.html" data-icon="r">profile</a>
+			</li>
+			<li>
+				<a href="social.html" data-icon="b">friend</a>
+			</li>
+			<li>
+				<a href="help.html" data-icon="n">help</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="../index.html" data-icon="e">close</a>
+			</li>
+		</ul>
+	</nav>
 </body>
+	<script src="../js/classie.js"></script>
+	<script src="../js/borderMenu.js"></script>
 </html>

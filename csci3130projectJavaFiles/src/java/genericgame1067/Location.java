@@ -1,3 +1,6 @@
+package genericgame1067;
+
+
 
 public class Location {
 

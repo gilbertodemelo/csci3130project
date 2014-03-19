@@ -1,3 +1,5 @@
+package genericgame1067;
+
 /**
  * Building Class for Generic Game #1067
  */

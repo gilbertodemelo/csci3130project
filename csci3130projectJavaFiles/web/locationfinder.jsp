@@ -12,6 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <jsp:useBean id="mybean" scope="session" class="genericgame1067.Location" />
+        <jsp:setProperty name="mybean" property="name" />
+        <%@page import="geocode.js" %>
+                
+                
     </body>
 </html>

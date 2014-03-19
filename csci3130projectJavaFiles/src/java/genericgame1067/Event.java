@@ -1,3 +1,5 @@
+package genericgame1067;
+
 public class Event {
 
     /**

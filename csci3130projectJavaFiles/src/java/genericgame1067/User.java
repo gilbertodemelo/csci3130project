@@ -1,3 +1,5 @@
+package genericgame1067;
+
 import java.util.ArrayList;
 
 public class User

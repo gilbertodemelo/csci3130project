@@ -1,17 +1,17 @@
 
 <?php
-    class user{
+    class User {
 
         //attributes
-        public $user;
+        public $username;
         public $password;
         public $totalpoints;
         public $accountID;
         public $friends = array();
 
         //constructor
-        function __construct($user, $password, $totalpoints, $accountID, $friends){
-            $this->user = $user;
+        function __construct($username, $password, $totalpoints, $accountID, $friends){
+            $this->username = $username;
             $this->password = $password;
             $this->totalpoints = $totalpoints;
             $this->accountID = $accountID;
@@ -27,8 +27,8 @@
             $this->accountID = $accountID;
         }
 
-        function setUser($user){
-            $this->user = $user;
+        function setUsername($username){
+            $this->username = $username;
         }
 
         function setPassword($password){
@@ -38,6 +38,27 @@
         function setFriends($friends){
             $this->friends = $friends;
         }
-    }
+
+        //get methods
+        function getTotalPoints(){
+            echo $this->totalpoints;
+        }
+
+        function getAccountID(){
+            echo $this->accountID;
+        }
+
+        function getUsername(){
+            echo $this->username;
+        }
+
+        function getFriends(){
+            for($i = 0; $i < friends.length; $i++){
+                echo $this->friends[$i];
+            }
+        }
+
+    } //end of class
+
 
 ?>

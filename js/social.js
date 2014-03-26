@@ -1,46 +1,33 @@
 $(document).ready(function() {
-	// delete later
-	// get from database
 
-	function Friend(id, name, info, img) {
-		this.id = id;
-		this.name = name;
-		this.info = info;
-		this.img = img;
+    var uid = localStorage.getItem('uid');
+    var friends;
+    $.ajax({
+        type: 'POST',
+        url:  '../mySQL2.php',
+        data: {
+            func: 'get_friend_list',
+            uid : uid
+        },
+        dataType: 'json',
+        success: function(response) {
+            friends = eval(response);
 
-		this.intro = name + " is " + info + " today.........";
-	}
+            for (var i in friends) {
+                $('#list').append('<div><h3>'+friends[i].name+'</h3>' + 
+                                  '<div class = \'content\'>' + 
+                                  '<div>character name:<p>'+friends[i].character+'</p></div>'+
+                                  '<div>points:<p>'+friends[i].points+'</p></div>'+
+                                  '<div>current position<p>'+friends[i].position+'</p></div>'+
+                                  '<img src=\'../img/characters/' + friends[i].img +'\'/>' + 
+                                  '<div class = \'long\'><p>'+friends[i].intro+'</p></div>'+
+                                  '</br></br></div></div>');
 
-	var friend_list = [];
-	friend_list.push(new Friend(1, "Vicky", "Meowth", "../img/Meowth.gif"),
-		new Friend(2, "Tsubasa", "Bulbasaur", "../img/Bulbasaur.gif"),
-		new Friend(3, "Gilberto", "Squirtle", "../img/Squirtle.gif"),
-		new Friend(4, "Richard", "Charmander", "../img/Charmander.gif")
-	);
-	for (i = 0; i < friend_list.length; i++) {
-		var title = "<div>" +
-			"<h3>" + friend_list[i].name +
-			"<button class = \"delete\">X</button>" +
-			"</h3>" +
-			"<div class=\"content\">" +
-			"<img src =\"" + friend_list[i].img + "\"/>" +
-			"<p>" + friend_list[i].intro + "</p>" +
-			"</div>" +
-			"</div>";
-		$("#list").append(title);
-	}
-	// delete end
+            }
 
-	$("#list").collapse({
-		query: "div h3"
-	});
-
-
-	$('button.delete').click(function() {
-		var d1 = $(this).parentsUntil('#list');
-		var d2 = d1.find('.content');
-		d1.remove();
-		d2.remove();
-		return true;
-	});
+            $("#list").collapse({
+                query: "div h3"
+            });
+        }
+    });
 });

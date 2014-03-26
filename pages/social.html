@@ -2,119 +2,48 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" 
-		  content='application/xhtml+xml; charset = UTF-8'>
+		  content='application/xhtml+xml; charset=UTF-8'>
 	<!-- mobile specific -->
-	<meta name = "viewport" content = "width = device-width; 
-	 	   min-height = device-height; initial-scale = 1.0; 
-	 	   maximum-scale = 1.0; user=scalable = 0;"/>
+	<meta name="viewport" content="width=device-width; 
+	 	   min-height=device-height; initial-scale=1.0; 
+	 	   maximum-scale=1.0; user=scalable=0;"/>
 
 	<title>Social #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
-	<script type='text/javascript' src='../js/social.js'></script>
-
+	<script type='text/javascript' src="../js/social.js"></script>
 	<script src="../js/jquery.collapse.js"></script>
-	<script type='text/javascript' src="../js/modernizr.custom.js"></script>
-	<script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
 
 	<link type="text/css" rel="stylesheet" href="../css/social.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
-	<script>
-		function add() {
-			var friend = search_form.friend_bar.value;
-			
-			$('#search p').replaceWith('');
-
-			if (friend === "Vicky" || friend === "Tsubasa" || 
-				friend === "Gilberto" || friend === "Richard") {
-				
-				$('#search').append('<p><br/>'+friend+' exists already!</p>').css({
-					color: 'rgba(255, 0, 0, 1)'
-				});				
-
-				return false;
-			}
-
-			if (friend === "Tester") {		
-				$('#search').append('<p><br/>'+friend+' added!</p>').css({
-					color: '#fff'
-				});
-
-				var new_friend = "<div>" +
-					"<h3 class = \"new\">" + friend +
-					"<button class = \"delete\">X</button>" +
-					"</h3>" +
-					"<div class=\"content\">" +
-					"<p>Test Friends Addition</p>" + 
-					"</div>" +
-					"</div>";
-				$('#list').append(new_friend);
-				// send to databas and refresh
-				$("#list").collapse({
-					query: "div h3.new"
-				});
-
-				$('button.delete').click(function() {
-					var d1 = $(this).parentsUntil('#list');
-					var d2 = d1.find('.content');
-					d1.remove();
-					d2.remove();
-					//remove from database
-				});
-
-				return truel;
-			} else {
-				$('#search').append('<p><br/>'+friend+' not found!</p>').css({
-					color: 'rgba(255, 0, 0, 1)'
-				});
-
-				return false;
-			}
-	}
-	</script>
 
 </head>
-<body onload = "window.scrollTo(0, 1)">
-	<div id="header">Friends</div>
-	<form name = "search_form" id="search" style="display:none;">
-		<div class = "topbar">
-			New Friend
-			<button type = "submit" class = "hidemodal" >X</button>
-		</div>
-		<input type = "text" name = "friend_bar" placeholder= "friend name ..." id = "search_bar">
-		<input type = "button" class = "function" value = "add"  onclick="add()"/>
-	</form>
+<body onload="window.scrollTo(0, 1)">
+	<div id="header">Friend</div>
 	<div id="list"></div>
+	<nav id="bt-menu" class="bt-menu">
 
-	<div class="container">
-		<nav id="bt-menu" class="bt-menu">
-			<a href="#" class="bt-menu-trigger">
-				<span>Menu</span>
-			</a>
-			<ul>
-				<li>
-					<a href="#search" class="bt-icon icon-zoom">Add</a>
-				</li>
-				<script type="text/javascript">
-					$(function(){
-					  $('#search').submit(function(e){
-					    return false;
-					  });
-					  
-					  $('.icon-zoom').leanModal({ top: 80, overlay: 0.45, closeButton: ".hidemodal" });
-					});			
-					</script>
-				<li>
-					<a href="#" class="bt-icon icon-flag">World Rank</a>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<a href="main.html" class="bt-icon-alt icon-step-backward">Back</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
+		<a href="#" class="bt-menu-trigger">
+			<span>Menu</span>
+		</a>
+		<ul>
+			<li>
+				<a href="search.html" data-icon="k">Search Friend</a>
+			</li>
+			<li>
+				<a href="search.html" data-icon="u">Delete Friend</a>
+			</li>
+			<li>
+				<a href="#" data-icon="a">Rank</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="main.html" data-icon="i">Back</a>
+			</li>
+		</ul>
+	</nav>
 </body>
 	<script src="../js/classie.js"></script>
 	<script src="../js/borderMenu.js"></script>

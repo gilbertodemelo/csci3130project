@@ -1,59 +1,60 @@
 $(document).ready(function() {
 
-    function User(username, pwd) {
-        this.username = username;
-        this.pwd = pwd;
-    }
+    $('.login_form').submit(function() {
 
-    var user_list = [];
-    user_list.push(new User("Tester", "group14"));
+        var username = $('.username').val().toUpperCase();
+        var password = $('.password').val();
 
-    $('.login_form form').submit(function() {
-        var username = $(this).find('.username').val();
-        var password = $(this).find('.password').val();
+        $.ajax({
+            type: 'POST',
+            url: 'mySQL1.php',
+            data: {
+                func: 'get_user_id',
+                uname: username
+            },
+            dataType: 'text',
+            success: function(response) {
+                localStorage.setItem('uid', response);
+            }
+        });
 
-        $('form p').replaceWith('');
-        // if username/password is empty
         if (username == '') {
-            $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '16px');
-            });
-            $(this).find('.error').fadeIn('fast', function() {
-                $(this).parent().find('.username').focus();
-            });
+            $('#error').append("username needed</br>");
+            $('#error').fadeIn('fast');
             return false;
-        }
-        if (password == '') {
-            $(this).find('.error').fadeOut('fast', function() {
-                $(this).css('top', '70px');
-            });
-            $(this).find('.error').fadeIn('fast', function() {
-                $(this).parent().find('.password').focus();
-            });
+        } else if (password == '') {
+            $('#error').html("password needed</br>");
+            $('#error').fadeIn('fast');
             return false;
-        }
-      
-        var user_found = false;
-        for (i = 0; i < user_list.length; i++) {
-            if (user_list[i].username === username) {
-                if (user_list[i].pwd === password) {
-                    return true;
-                }  else {
-                    $(this).append('<p><br/>Invalid Password : (</p>');
-                    return false;
+        } else {
+            $.ajax({
+                type: 'POST',
+                url: 'mySQL1.php',
+                data: {
+                    func: 'login',
+                    uname: username,
+                    pwd: password
+                },
+                dataType: 'text',
+                success: function(response) {
+                    if (response === 'true') {
+                        $('#error').html("success")
+                        $('#error').fadeIn('fast');
+                        window.location = 'pages/main.html';
+                    } else {
+                        $('#error').html("invalid username/password<br/>")
+                        $('#error').fadeIn('fast');
+                    }
                 }
-
-                user_found = true;
-            } 
+            });
         }
-
-        if (!user_found)
-            $(this).append('<p><br/>Invalid Username : (</p>');
-
-        return user_found;
+        return false;
     });
 
-    $('.login_form form .username, .login_form form .password').keyup(function() {
-        $(this).parent().find('.error').fadeOut('fast');
+    $('.username').keyup(function() {
+        $('#error').fadeOut('fast');
+    });
+    $('.password').keyup(function() {
+        $('#error').fadeOut('fast');
     });
 });

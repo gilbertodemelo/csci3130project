@@ -2,72 +2,47 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" 
-		  content='application/xhtml+xml; charset = UTF-8'>
+		  content='application/xhtml+xml; charset=UTF-8'>
 	<!-- mobile specific -->
-	<meta name = "viewport" content = "width = device-width; 
-	 	   min-height = device-height; initial-scale = 1.0; 
-	 	   maximum-scale = 1.0; user=scalable = 0;"/>
+	<meta name="viewport" content="width=device-width; 
+	 	   min-height=device-height; initial-scale=1.0; 
+	 	   maximum-scale=1.0; user=scalable=0;"/>
 
 	<title>Profile #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
 	<script type='text/javascript' src='../js/profile.js'></script>
-	<script type='text/javascript' src="../js/modernizr.custom.js"></script>
-	<script type="text/javascript" src="../js/jquery.leanModal.min.js"></script>
 
 	<link type="text/css" rel="stylesheet" href="../css/profile.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
 
 </head>
-<body onload = "window.scrollTo(0, 1)">
+<body onload="window.scrollTo(0, 1)">
 	<div id="header">My Account</div>
-	<div id="search" style="display:none;">
-		<div class = "topbar">
-			My Info
-			<button type = "submit" class = "hidemodal" >X</button>
-		</div>
-	</div>
+	<div id="container"></div>
+	<nav id="bt-menu" class="bt-menu">
+		<a href="#" class="bt-menu-trigger">
+			<span>Menu</span>
+		</a>
+		<ul>
+			<li>
+				<a href="#" data-icon="r" id="profile">My Info</a>
+			</li>
+			<li>
+				<a href="#" data-icon="t" id="character">Character Info</a>
+			</li>
+			<li>
+				<a href="#" data-icon="d">Recent</a>
+			</li>
+		</ul>
+		<ul>
+			<li>
+				<a href="main.html" data-icon="i">Back</a>
+			</li>
+		</ul>
+	</nav>
 
-	<div class="container">
-		<div>
-			<img src="../img/Pikachu.gif" />
-			<p>Pikachu is an Electric-type Pokémon.</p> 
-			<p>It evolves from Pichu when leveled up with high friendship and evolves into Raichu when exposed to a Thunder Stone. </p>
-			<p>Pikachu is popularly known as the mascot of the Pokémon franchise and a major representative of Nintendo's collective mascots. </p>
-			<p>It is also the version mascot of Pokémon Yellow, where it is the only starter Pokémon in that game. It has made numerous appearances on the boxes of spin-off titles. </p>
-
-			<p>Pikachu is also the starter Pokémon in Pokémon Rumble Blast. </p>
-		</div>
-		<nav id="bt-menu" class="bt-menu">
-			<a href="#" class="bt-menu-trigger">
-				<span>Menu</span>
-			</a>
-			<ul>
-				<li>
-					<a href="#search" class="bt-icon icon-user-outline">My Info</a>
-				</li>
-				<script type="text/javascript">
-					$(function(){
-					  $('#search').submit(function(e){
-					    return false;
-					  });
-					  
-					  $('.icon-user-outline').leanModal({ top: 80, overlay: 0.45, closeButton: ".hidemodal" });
-					});			
-					</script>
-
-				<li>
-					<a href="#" class="bt-icon icon-bubble">Recent</a>
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<a href="main.html" class="bt-icon-alt icon-step-backward">Back</a>
-				</li>
-			</ul>
-		</nav>
-	</div>
-	<!-- /container -->
 </body>
 	<script src="../js/classie.js"></script>
 	<script src="../js/borderMenu.js"></script>

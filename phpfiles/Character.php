@@ -1,7 +1,7 @@
 <?php
 
 
-class Character {
+class Character extends user {
 
     /** attributes */
     public $charaId;

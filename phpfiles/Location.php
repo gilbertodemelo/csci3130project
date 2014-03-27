@@ -34,6 +34,9 @@ class Location {
         echo "Longitude: ".$_GET['longitude'];
     }
 
+    function __toString(){
+        return "" + getLongitude() + getLatitude;
+    }
 } //end of class
 
 ?>

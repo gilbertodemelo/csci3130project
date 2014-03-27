@@ -105,4 +105,927 @@ class Event extends Character{
         return $this->loc->$__toString();
     }
 
+    public function meeting(){
+        /*
+         * This is a giant switch statement for all of the possible meetups between characters
+         */
+        switch($this->char1->getCharaName())
+        {
+
+             //first user is pikachu
+
+            case "pikachu":
+                /*
+                 * switch statement for the second user
+                 */
+                switch($this->char2->getCharaName())
+                {
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                    switch(rand(0,2))
+                    {
+                        case 0:
+                            echo "";
+                            break;
+                        case 1:
+                            echo "";
+                            break;
+                        case 2:
+                            echo "";
+                            break;
+                    }
+                    break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is reilly
+
+            case "derek reilly":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is dragon
+
+            case "greedy dragon":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is NOT DRUG DEALER
+
+            case "NOT DRUG DEALER":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is eligible bachelor
+
+            case "eligible bachelor":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is NOT DRUG DEALER
+
+            case "NOT SERIAL RAPIST":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is NOT MENTAL PATIENT
+
+            case "NOT MENTAL PATIENT":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "wretched man":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+
+            //first user is wretched man
+
+            case "wretched man":
+
+                switch($this->char2->getCharaName())
+                {
+                    case "pikachu":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "greedy dragon":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "derek reilly":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "eligible bachelor":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT SERIAL RAPIST":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT MENTAL PATIENT":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                    case "NOT DRUG DEALER":
+                        switch(rand(0,2))
+                        {
+                            case 0:
+                                echo "";
+                                break;
+                            case 1:
+                                echo "";
+                                break;
+                            case 2:
+                                echo "";
+                                break;
+                        }
+                        break;
+
+                }
+                break;
+        }
+    }
 }

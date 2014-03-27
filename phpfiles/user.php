@@ -20,7 +20,7 @@
 
         //set methods
         function setTotalPoints($totalpoints){
-             $this->totalpoints = $totalpoints;
+             $this->totalpoints += $totalpoints;
         }
 
         function setAccountID($accountID){

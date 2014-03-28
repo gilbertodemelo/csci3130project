@@ -1,0 +1,12 @@
+#header {
+	height: 70px;
+}
+#front {
+	margin-left: -50px;
+	margin-right: -50px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #fff;	
+}
+#end {
+	margin-top: 5px;
+}

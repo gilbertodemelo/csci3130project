@@ -26,7 +26,31 @@ function login($uname, $pwd) {
 		echo 'true';
 	else 
 		echo 'false';
-	// echo ($password[0] == $pwd);
+}
+
+function register($uname, $password, $email, $phone) {
+	$user_id = 
+		mysql_fetch_row(
+		mysql_query(
+			'SELECT userid FROM group14.user WHERE username = \''.$uname.'\''));
+	if ($user_id[0] != '') {
+		echo "Username Exists";
+	} else {
+		$unum = 
+			mysql_fetch_row(
+			mysql_query(
+				'SELECT count(*) FROM group14.user'));
+		$num = $unum[0] + 1;
+		$c_num =
+			mysql_fetch_row(
+			mysql_query(
+				'SELECT count(*) FROM group14.character'));
+		$c_id = rand(1, $c_num[0]);
+		mysql_query('INSERT INTO group14.user VALUES (\''.$num.'\', \''.$uname.'\', \''.$email.'\', \''.$password.'\', \'0\',\''.$c_id.'\', \'0\', \'0\', \''.$phone.'\')');
+		mysql_query('INSERT INTO group14.friendList (id) VALUES (\''.$num.'\')');
+		mysql_query('INSERT INTO group14.eventList (user_id) VALUES (\''.$num.'\')');
+		echo 'Register successful';
+	}
 }
 
 switch ($_POST['func']) {
@@ -35,6 +59,9 @@ switch ($_POST['func']) {
         break;
     case 'login':
     	login($_POST['uname'],$_POST['pwd']);
+    	break;
+    case 'register':
+    	register($_POST['uname'], $_POST['password'], $_POST['email'], $_POST['phone']);
     	break;
 }
 ?>

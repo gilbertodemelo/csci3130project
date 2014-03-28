@@ -1,0 +1,24 @@
+#header #name {
+	padding-top: 85px;
+	color: #000;
+	margin-left: 20px;
+}
+#header #at {
+	margin-left: 20px;
+	float: left;
+}
+#container img {
+	margin-left: 60px;
+	margin-top: -10px;
+	width: 200px;
+}
+#long {
+	font-family: CenturyGothic;
+	padding-left: 25px;
+	padding-right: 25px;
+	margin-left: -10px;
+	margin-right: -10px;
+	color: #fff;
+	margin-top: 10px;
+	font-size: 18px;
+}

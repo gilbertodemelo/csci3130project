@@ -12,13 +12,25 @@
 
 	<script type='text/javascript' src="js/jquery.js"></script>
 	<script type='text/javascript' src='js/index.js'></script>
-	<link type="text/css" rel="stylesheet" href="css/index.css"/>
-
+	<link type="text/css" rel="stylesheet" href="./css/index.css"/>
+	<script>
+		function getLocation() {
+		    navigator.geolocation.getCurrentPosition(showPosition);
+		}
+		function showPosition(position) {
+		  var x = position.coords.latitude;
+		  var y = position.coords.longitude;
+		  
+		  if (x >= 44.634180 && x <= 44.645051 && y <= -63.576895 && y >= -63.598353) {
+		  		var map_x = (x - 44.634180)/0.010871;
+		  		var map_y = (y + 63.598353)/0.021458;	
+		  }
+		}
+	</script>
 </head>
 <body onload="window.scrollTo(0, 1)">
 	<div class="login_form">
-		<img src='img/pikachu.gif'/>
-		<!-- login form -->
+		<div id = "header"></div>
 		<form action="pages/main.html" method="post">
 			<input type="text" name="username" class="username" placeholder="Username">
 			<input type="password" name="password" class="password" placeholder="Password">
@@ -29,6 +41,9 @@
 			<br/>
 			<p id="error"></p>
 		</form>
+	</div>
+	<div id = "footer">
+		2014 Winter - CSCI 3130 - Group 14
 	</div>
 </body>
 </html>

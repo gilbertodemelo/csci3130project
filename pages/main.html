@@ -11,23 +11,24 @@
 	<title>Main #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
-	<script type='text/javascript' src="../js/main.js"></script>
 	<script type="text/javascript" src="../js/jquery.taggd.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
+
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+	<link type="text/css" rel="stylesheet" href="../css/listing.css"/>
 	<link type="text/css" rel="stylesheet" href="../css/main.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/taggd.css" />
-
 	<script type="text/javascript">
     var data     = [];
     var settings = [];
     </script>
+
 </head>
 
 <body onload="window.scrollTo(0, 1)">
-	<div id="header">World Map</div>
-	<img class="taggd" src="../img/maps/main.png" alt="photo" />
+	<a href = '../index.html'><div id = 'close'>close</div></a>
+	<div id = "container">
+	<img class="taggd" src="../images/map.png" alt="photo" />
 	<script type="text/javascript">
 		var friend_list;
 		$.ajax({
@@ -40,13 +41,12 @@
             dataType: 'json',
             success: function(response) {
                 friend_list = eval(response);
-				// localStorage.setItem('list', JSON.stringify(friend_list));
 				
                 var data_list = [];
                 for (var i in friend_list) {
                 	data_list.push({x:    friend_list[i].x, 
                 					y:    friend_list[i].y, 
-                					text: friend_list[i].nickname});
+                					text: friend_list[i].username});
                 }
 
 		        data.push(data_list);
@@ -68,28 +68,12 @@
             }
         });
     </script>
-	<nav id="bt-menu" class="bt-menu">
-		<a href="#" class="bt-menu-trigger">
-			<span>Menu</span>
-		</a>
-		<ul>
-			<li>
-				<a href="profile.html" data-icon="r">profile</a>
-			</li>
-			<li>
-				<a href="social.html" data-icon="b">friend</a>
-			</li>
-			<li>
-				<a href="help.html" data-icon="n">help</a>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<a href="../index.html" data-icon="e">close</a>
-			</li>
-		</ul>
-	</nav>
+    </div>
+	<div id = "footer">
+		<div data-icon='"' id = "current"></div>
+		<a href = "profile.html"><div class = "links" data-icon="f"></div></a>
+		<a href = "friend.html"><div class = "links" data-icon="b"></div></a>
+		<a href = "help.html"><div class = "links" data-icon="n"></div></a>
+	</div>
 </body>
-	<script src="../js/classie.js"></script>
-	<script src="../js/borderMenu.js"></script>
 </html>

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     var uid  = localStorage.getItem('uid');
 	var info;
 
@@ -15,25 +16,14 @@ $(document).ready(function() {
         	display_profile();
         }
     });
-
-    $('#profile').click(function() {
-        display_profile();
-    });
-
-    $('#character').click(function() {
-    	display_character();
-    });
     function display_profile() {
-	 	$('#container').html('<div>username:<p>' + info[0].username +'</p></div>' + 
-							 '<div>nickname:<p>' + info[0].nickname +'</p></div>' + 
-							 '<div>points:<p>' + info[0].points +'</p></div>' + 
-							 '<div>current position:<p>' + info[0].position +'</p></div>'+
-							 '<div>character:<p>' + info[1].name +'</p></div>');
-    }
-    function display_character() {
-    	$('#container').html('<div>character name:<p>' + info[1].name +'</p></div>' +
-	    				 	 '<div>from:<p>' + info[1].resource +'</p></div>' +  
-	    				 	 '<img src=\'../img/characters/' + info[1].img +'\'/>' + 
-	    				 	 '<div class = \'long\'>' + info[1].intro + '</div><br/><br/>');
+        $('#header').html('<img src=\'../images/characters/' + info[1].head + '\' id =\'photo\'/>' + 
+        	              '<p id =\'name\'>' + info[0].username + '</p>' + 
+        	              '<p id = \'at\'>at <span id = \'position\'>' + info[0].position + '</span></p>');
+
+	 	$('#Email').html(info[0].email);
+		$('#Character').html(info[1].name);
+		$('#Point').html(info[0].points);
+		$('#Phone').html(info[0].phone);
     }
 });

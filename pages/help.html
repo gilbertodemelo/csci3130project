@@ -2,44 +2,37 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" 
-		  content='application/xhtml+xml; charset = UTF-8'>
+		  content='application/xhtml+xml; charset=UTF-8'>
 	<!-- mobile specific -->
-	<meta name = "viewport" content = "width = device-width; 
-	 	   min-height = device-height; initial-scale = 1.0; 
-	 	   maximum-scale = 1.0; user=scalable = 0;"/>
+	<meta name="viewport" content="width=device-width; 
+	 	   min-height=device-height; initial-scale=1.0; 
+	 	   maximum-scale=1.0; user=scalable=0;"/>
 
-	<title>Help #1067</title>
+	<title>Profile #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
-	<script type='text/javascript' src='../js/help.js'></script>
-	<script src="../js/modernizr.custom.63321.js"></script>
+	<script type='text/javascript' src="../js/help.js"></script>
 
-	<link type="text/css" rel="stylesheet" href="../css/help.css"/>
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
+	<link type="text/css" rel="stylesheet" href="../css/listing.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/help.css"/>
 </head>
-<body onload = "window.scrollTo(0, 1)">
-		<div class="container">		
-			<div class="fleft">
-				<select id="cd-dropdown" name="cd-dropdown" onchange ="alert()">
-					<option value="-1" selected>FQA</option>
-					<option value="1" class="icon-monkey">Game Intro</option>
-					<option value="2" class="icon-bear">How to play?</option>
-					<option value="3" class="icon-squirrel">How to gain points?</option>
-					<option value="4" class="icon-elephant">Who is Derek Reilly?</option>
-					<option value="5" class="icon-elephant">back</option>
-				</select>
-			</div>
-		</div>
-		<div class = "content">
-			<p>Hello World! This is the Frequent Question and Answer page</p>
-		</div>
-		<script type="text/javascript" src="../js/jquery.dropdown.js"></script>
-		<script type="text/javascript">
-			$( function() {
-				$( '#cd-dropdown' ).dropdown( {
-					gutter : 5
-				} );
-			});
-		</script>
+
+<body onload="window.scrollTo(0, 1)">
+	<div id = "container">
+		<p id = 'a'><span class = "icons" data-icon = "I"></span><span class = "attr">Introduction</span><span id = "Character"></span><span class = "icon" data-icon = "y"/></p>
+		<p id = 'b'><span class = "icons" data-icon = "q"></span><span class = "attr">How to play</span><span class = "icon" data-icon = "y"/></p>
+		<p id = 'c'><span class = "icons" data-icon = ">"></span><span class = "attr">How to gain points</span><span id = "Character"></span><span class = "icon" data-icon = "y"/></p>
+		<p id = 'd'><span class = "icons" data-icon = "c"></span><span class = "attr">Who is derek reilly</span><span class = "icon" data-icon = "y"/></p>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+	<div id = "footer">
+		<a href = "main.html"><div class = "links" data-icon='"'></div></a>
+		<a href = "profile.html"><div class = "links" data-icon='f'></div></a>
+		<a href = "friend.html"><div class = "links" data-icon="b"></div></a>
+		<div id = "current" data-icon='n'></div>
+	</div>
 </body>
 </html>

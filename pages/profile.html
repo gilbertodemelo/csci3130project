@@ -11,39 +11,34 @@
 	<title>Profile #1067</title>
 
 	<script type='text/javascript' src="../js/jquery.js"></script>
-	<script type='text/javascript' src='../js/profile.js'></script>
+	<script type='text/javascript' src="../js/profile.js"></script>
 
-	<link type="text/css" rel="stylesheet" href="../css/profile.css"/>
-	<link rel="stylesheet" type="text/css" href="../css/menu.css" />
 	<link rel="stylesheet" type="text/css" href="../css/icons.css" />
-
+	<link type="text/css" rel="stylesheet" href="../css/listing.css"/>
+	<link type="text/css" rel="stylesheet" href="../css/profile.css"/>
 </head>
-<body onload="window.scrollTo(0, 1)">
-	<div id="header">My Account</div>
-	<div id="container"></div>
-	<nav id="bt-menu" class="bt-menu">
-		<a href="#" class="bt-menu-trigger">
-			<span>Menu</span>
-		</a>
-		<ul>
-			<li>
-				<a href="#" data-icon="r" id="profile">My Info</a>
-			</li>
-			<li>
-				<a href="#" data-icon="t" id="character">Character Info</a>
-			</li>
-			<li>
-				<a href="#" data-icon="d">Recent</a>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<a href="main.html" data-icon="i">Back</a>
-			</li>
-		</ul>
-	</nav>
 
+<body onload="window.scrollTo(0, 1)">
+	<div id="header">
+		<img src="../images/testhead.jpg" id = "photo" />
+		<p id = "name">VICKY</p>
+		<p id = "at">at <span id = "position">dalhousie university</span></p>
+	</div>
+	<div id = "container">
+		<p><span class = "icons" data-icon ='%'></span><span class = "attr">Email: </span><span id = "Email"></span></p>
+		<p><span class = "icons" data-icon = "!"></span><span class = "attr">Phone: </span><span id = "Phone"></span></p>
+		<p><span class = "icons" data-icon = "."></span><span class = "attr">Points: </span><span id = "Point"></span></p>
+		<a href = "character.html"><p><span class = "icons" data-icon = "t"></span><span class = "attr">Character: </span><span id = "Character"></span><span class = "icon" data-icon = "A"/></p></a>
+		<a href = "recent.html"><p><span class = "icons" data-icon = "v"></span><span class = "attr">Recent Events</span><span class = "icon" data-icon = "A"/></p></a>
+		<br/>
+		<br/>
+		<br/>
+	</div>
+	<div id = "footer">
+		<a href = "main.html"><div class = "links" data-icon='"'></div></a>
+		<div id = "current" data-icon='f'></div>
+		<a href = "friend.html"><div class = "links" data-icon="b"></div></a>
+		<a href = "help.html"><div class = "links" data-icon="n"></div></a>
+	</div>
 </body>
-	<script src="../js/classie.js"></script>
-	<script src="../js/borderMenu.js"></script>
 </html>

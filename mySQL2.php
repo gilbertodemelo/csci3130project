@@ -14,7 +14,7 @@ function get_geo_info($uid) {
 		mysql_fetch_row(
         mysql_query(
         	'SELECT * FROM group14.user WHERE userid = '.$uid.''));
-			$user_info = array('nickname' => $user_rows[2],
+			$user_info = array('username' => $user_rows[1],
 							   'x'        => $user_rows[6],
 							   'y'        => $user_rows[7]);
  	return $user_info;
@@ -24,7 +24,7 @@ function get_user_id($uname) {
 	$uid = 
 		mysql_fetch_row(
 		mysql_query(
-			'SELECT userid FROM group14.user WHERE nickname = \''.$uname.'\''));
+			'SELECT userid FROM group14.user WHERE username = \''.$uname.'\''));
 	return $uid[0];
 }
 
@@ -73,6 +73,7 @@ function get_character_info($cid) {
 	$character_info = array('name'=>$character[1],
 						    'resource'=>$character[3],
 					 	    'img'=>$character[4],
+					 	    'head'=>$character[5],
 					        'intro'=>$character[2]);
 	return $character_info;
 }
@@ -84,12 +85,15 @@ function get_user_info($uid) {
 			'SELECT * FROM group14.user WHERE userid = '.$uid.''));
 	$location = 
 		get_user_location($user[6], $user[7]);
-
+	$last_event = 
+		get_last_event($uid);
 	$profile = array('username'  =>$user[1],
-					 'nickname'  =>$user[2],
+					 'phone'     =>$user[8],
+					 'email'     =>$user[2],
 					 'points'    =>$user[4],
 					 'position'  =>$location,
-					 'character_id' =>$user[5]);
+					 'character_id' =>$user[5],
+					 'event' => $last_event);
 	return $profile;
 }
 
@@ -103,6 +107,22 @@ function get_profile($uid) {
 	echo $json_info;
 }
 
+function get_profile2($uname) {
+	$uid = get_user_id($uname);
+	echo get_profile($uid);
+}
+function get_last_event($uid) {
+	$event_list = 
+		mysql_fetch_row(
+		mysql_query(
+			'SELECT event5 FROM group14.eventList WHERE user_id = '.$uid.''));
+	$event = 
+		mysql_fetch_row(
+		mysql_query(
+			'SELECT event FROM group14.events WHERE id = '.$event_list[0].''));
+	return $event[0];
+}
+
 function get_friend_list($uid) {
 	$friend_id_list = 
 		get_id_list($uid);
@@ -114,19 +134,19 @@ function get_friend_list($uid) {
 			$character = 
 				get_character_info($profile['character_id']);
 
-			$friend = array('name' => $profile['nickname'],
+			$friend = array('name' => $profile['username'],
 							'points'=>$profile['points'],
 							'position'=>$profile['position'],
 							'character'=>$character['name'],
 							'img'=>$character['img'],
-							'intro'=>$character['intro']);
+							'intro'=>$character['intro'],
+							'head'=>$character['head']);
 			array_push($friends, $friend);
 		}		
 	} 
 	$friend_json = json_encode($friends);
 	echo $friend_json;
 }
-
 function search_friend($uid, $fname) {
 	$fid = 
 		get_user_id($fname);
@@ -149,27 +169,50 @@ function search_friend($uid, $fname) {
 				}
 			}
 			mysql_query('UPDATE group14.friendList SET friend'.$i.'='.$fid.' WHERE id = '.$uid.'');
+
 			$result .= "added successful";
 		}
 	}
 	echo $result;
 }
 
-function get_delete_list($uid) {
-	$friend_list = 
-		get_id_list($uid);
-	$delete_list = array();
-	foreach ($friend_list as $value) {
-		if ($value != "") {
-			$name = 
+function get_event_list($uid) {
+	$event_list = 
+		mysql_fetch_row(
+		mysql_query(
+			'SELECT * FROM group14.eventList WHERE user_id = '.$uid.''));
+	$recent = array();
+	$profile;
+	$events = array();
+	foreach ($event_list as $index => $event_id) {
+		if ($index == 0) {
+			$user_info = 
 				mysql_fetch_row(
 				mysql_query(
-					'SELECT nickname FROM group14.user WHERE userid = '.$value.''));
-			array_push($delete_list, $name[0]);
+				'SELECT * FROM group14.user WHERE userid = '.$event_id.''));
+			$head = 
+				mysql_fetch_row(
+				mysql_query(
+				'SELECT head FROM group14.character WHERE character_id = '.$user_info[5].''));
+			$profile = array('name' => $user_info[1], 
+				             'points' => $user_info[4], 
+				             'head' => $head[0]);
+			array_push($recent, $profile);
+			continue;
 		}
+
+		$event_info = 
+			mysql_fetch_row(
+			mysql_query(
+			'SELECT * FROM group14.events WHERE id = '.$event_id.''));
+		$event = array('direction' => $event_info[2],
+			           'event' => $event_info[1], 
+			           'value' => $event_info[3]);
+		array_push($events, $event);
 	}
-	$list_json = json_encode($delete_list);
-	echo $list_json;
+	array_push($recent, $events);
+	$event_json = json_encode($recent);
+	echo $event_json;
 }
 
 function delete_friend($uid, $fname) {
@@ -190,8 +233,14 @@ switch ($_POST['func']) {
     case 'get_friend_info':
         get_friend_info($_POST['uid']);
         break;
+    case 'get_event_list':
+        get_event_list($_POST['uid']);
+        break;
 	case 'get_profile':
         get_profile($_POST['uid']);
+        break;
+	case 'get_profile2':
+        get_profile2($_POST['uname']);
         break;
     case 'get_friend_list':
     	get_friend_list($_POST['uid']);

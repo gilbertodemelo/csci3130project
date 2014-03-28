@@ -1,24 +1,41 @@
-#header {
-	background-color: rgba(84, 162, 240, 0.8);
-	margin-bottom: 0;
-}
-
-/* trigger color */
-.bt-menu-trigger span {
-	background-color: rgb(84, 162, 240);
-}
-.bt-menu-trigger span:before,
-.bt-menu-trigger span:after {
-	background: rgb(84, 162, 240);
-}
-.bt-menu ul li a:before {
-	color: rgba(84, 162, 240, 1);
+* {
+	padding:0;
+	margin:0;
 }
 body {
-	background-image: url("../img/maps/main.jpg");
-	background-repeat: cover;
-	bottom: 0;
+	font-size:12px;
+	font-family: Comic Sans MS, Arial, Helvetica, sans-serif;
+	background-color: #F2F2EB;
+	/*background:#FAF6EA url(../images/main_bg.jpg) no-repeat center top;*/
 }
-img {
-	margin-top: 0px;
+#close {
+	background-color: #858585;
+	color: #fff;
+	width: 80px;
+	font-size: 20px;
+	font-family: CenturyGothic;
+	text-align: center;
+	border-radius: 20px;
+	margin-top: 10px;
+	height: 30px;
+	padding-top: 5px;
+	float: right;
+	z-index: 20;
+	margin-right: 15px;
+}
+
+#container {
+	padding-top: 65px;
+	z-index: 20;
+}
+#container img {
+	width: 100%;
+	font-size: 15px;
+}
+.friends {
+	float: left;
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	padding-left: 20px;
 }

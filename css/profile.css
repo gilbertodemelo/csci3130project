@@ -1,25 +1,10 @@
-#container {
-	color: rgb(247, 116, 138);
+#photo {
+	margin-top: 50px;
+	width: 80px;
+	height: 80px;
+	margin-left: 20px;
+	border: 4px solid #000;
 }
 #container p {
-	color: #FAF898;
-}
-#header {
-	background-color: rgba(247, 116, 138, 0.8);
-}
-
-/* trigger color */
-.bt-menu-trigger span {
-	background-color: rgb(247, 116, 138);
-}
-.bt-menu-trigger span:before,
-.bt-menu-trigger span:after {
-	background: rgb(247, 116, 138);
-}
-.bt-menu ul li a:before {
-	color: rgba(247, 116, 138, 1);
-}
-img {
-	margin-left: 20px;
-	width: 300px;
+	margin-top: -5px;
 }

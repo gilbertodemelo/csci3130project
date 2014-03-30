@@ -104,124 +104,113 @@ class Event extends Character{
     public function __call($__toString){
         return $this->loc->$__toString();
     }
-
+    /*
+     * @return the event ID
+     */
     public function meeting(){
         /*
-         * This is a giant switch statement for all of the possible meetups between characters
+         * This is a giant switch statement for all of the possible meetups between characters.
+         * The event ID is returned.
          */
-        switch($this->char1->getCharaName())
+        switch($this->char1->getCharaID())
         {
 
-             //first user is pikachu
+            //first user is pikachu
 
-            case "pikachu":
+            case 1:
                 /*
                  * switch statement for the second user
                  */
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
 
-                    case "derek reilly":
+                    case 2:
+                        return 1;
+                        break;
+
+                    case 3:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 2;
                                 break;
                             case 1:
-                                echo "";
+                                return 3;
                                 break;
                             case 2:
-                                echo "";
+                                return 4;
                                 break;
                         }
                         break;
 
-                    case "greedy dragon":
-                    switch(rand(0,2))
-                    {
-                        case 0:
-                            echo "";
-                            break;
-                        case 1:
-                            echo "";
-                            break;
-                        case 2:
-                            echo "";
-                            break;
-                    }
-                    break;
-
-                    case "NOT DRUG DEALER":
+                    case 4:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 5;
                                 break;
                             case 1:
-                                echo "";
+                                return 6;
                                 break;
                             case 2:
-                                echo "";
+                                return 7;
                                 break;
                         }
                         break;
 
-                    case "eligible bachelor":
+                    case 5:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 8;
                                 break;
                             case 1:
-                                echo "";
+                                return 9;
                                 break;
                             case 2:
-                                echo "";
+                                return 10;
                                 break;
                         }
                         break;
 
-                    case "NOT SERIAL RAPIST":
+                    case 6:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 11;
                                 break;
                             case 1:
-                                echo "";
+                                return 12;
                                 break;
                             case 2:
-                                echo "";
+                                return 13;
                                 break;
                         }
                         break;
 
-                    case "NOT MENTAL PATIENT":
+                    case 7:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 14;
                                 break;
                             case 1:
-                                echo "";
+                                return 15;
                                 break;
                             case 2:
-                                echo "";
+                                return 16;
                                 break;
                         }
                         break;
 
-                    case "wretched man":
-                        switch(rand(0,2))
+                    case 8:
+                        switch(rand(0,1))
                         {
                             case 0:
-                                echo "";
+                               return 18;
                                 break;
                             case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 19;
                                 break;
                         }
                         break;
@@ -231,113 +220,36 @@ class Event extends Character{
 
             //first user is reilly
 
-            case "derek reilly":
+            case 2:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 1:
+                        return 19;
                         break;
 
-                    case "greedy dragon":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 3:
+                        return 20;
                         break;
 
-                    case "NOT DRUG DEALER":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 4:
+                        return 21;
                         break;
 
-                    case "eligible bachelor":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 5:
+                        return 22;
                         break;
 
-                    case "NOT SERIAL RAPIST":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 6:
+                        return 23;
                         break;
 
-                    case "NOT MENTAL PATIENT":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 7:
+                        return 24;
                         break;
 
-                    case "wretched man":
-                        switch(rand(0,2))
-                        {
-                            case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
-                                break;
-                        }
+                    case 8:
+                        return 25;
                         break;
 
                 }
@@ -345,111 +257,105 @@ class Event extends Character{
 
             //first user is dragon
 
-            case "greedy dragon":
+            case 3:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
+                    case 1:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 26;
                                 break;
                             case 1:
-                                echo "";
+                                return 27;
                                 break;
                             case 2:
-                                echo "";
+                                return 28;
                                 break;
                         }
                         break;
 
-                    case "derek reilly":
+                    case 2:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 29;
                                 break;
                         }
                         break;
 
-                    case "NOT DRUG DEALER":
+                    case 4:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 30;
                                 break;
                             case 1:
-                                echo "";
+                                return 31;
                                 break;
                             case 2:
-                                echo "";
+                                return 32;
                                 break;
                         }
                         break;
 
-                    case "eligible bachelor":
+                    case 5:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 33;
                                 break;
                             case 1:
-                                echo "";
+                                return 34;
                                 break;
                             case 2:
-                                echo "";
+                                return 35;
                                 break;
                         }
                         break;
 
-                    case "NOT SERIAL RAPIST":
+                    case 6:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 36;
                                 break;
                             case 1:
-                                echo "";
+                                return 37;
                                 break;
                             case 2:
-                                echo "";
+                                return 38;
                                 break;
                         }
                         break;
 
-                    case "NOT MENTAL PATIENT":
+                    case 7:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 39;
                                 break;
                             case 1:
-                                echo "";
+                                return 40;
                                 break;
                             case 2:
-                                echo "";
+                                return 41;
                                 break;
                         }
                         break;
 
-                    case "wretched man":
+                    case 8:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 42;
                                 break;
                             case 1:
-                                echo "";
+                                return 43;
                                 break;
                             case 2:
-                                echo "";
+                                return 44;
                                 break;
                         }
                         break;
@@ -457,113 +363,107 @@ class Event extends Character{
                 }
                 break;
 
-            //first user is NOT DRUG DEALER
+            //first user is shifty cow
 
-            case "NOT DRUG DEALER":
+            case 4:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
+                    case 1:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 45;
                                 break;
                             case 1:
-                                echo "";
+                                return 46;
                                 break;
                             case 2:
-                                echo "";
+                                return 47;
                                 break;
                         }
                         break;
 
-                    case "greedy dragon":
+                    case 3:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 48;
                                 break;
                             case 1:
-                                echo "";
+                                return 49;
                                 break;
                             case 2:
-                                echo "";
+                                return 50;
                                 break;
                         }
                         break;
 
-                    case "derek reilly":
+                    case 2:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 51;
                                 break;
                         }
                         break;
 
-                    case "eligible bachelor":
+                    case 5:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 52;
                                 break;
                             case 1:
-                                echo "";
+                                return 53;
                                 break;
                             case 2:
-                                echo "";
+                                return 54;
                                 break;
                         }
                         break;
 
-                    case "NOT SERIAL RAPIST":
+                    case 6:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 55;
                                 break;
                             case 1:
-                                echo "";
+                                return 56;
                                 break;
                             case 2:
-                                echo "";
+                                return 57;
                                 break;
                         }
                         break;
 
-                    case "NOT MENTAL PATIENT":
+                    case 7:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 58;
                                 break;
                             case 1:
-                                echo "";
+                                return 59;
                                 break;
                             case 2:
-                                echo "";
+                                return 60;
                                 break;
                         }
                         break;
 
-                    case "wretched man":
+                    case 8:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 61;
                                 break;
                             case 1:
-                                echo "";
+                                return 62;
                                 break;
                             case 2:
-                                echo "";
+                                return 63;
                                 break;
                         }
                         break;
@@ -573,111 +473,105 @@ class Event extends Character{
 
             //first user is eligible bachelor
 
-            case "eligible bachelor":
+            case 5:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
+                    case 1:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 64;
                                 break;
                             case 1:
-                                echo "";
+                                return 65;
                                 break;
                             case 2:
-                                echo "";
+                                return 66;
                                 break;
                         }
                         break;
 
-                    case "greedy dragon":
+                    case 3:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 67;
                                 break;
                             case 1:
-                                echo "";
+                                return 68;
                                 break;
                             case 2:
-                                echo "";
+                                return 69;
                                 break;
                         }
                         break;
 
-                    case "derek reilly":
+                    case 2:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 70;
                                 break;
                         }
                         break;
 
-                    case "NOT DRUG DEALER":
+                    case 4:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 71;
                                 break;
                             case 1:
-                                echo "";
+                                return 72;
                                 break;
                             case 2:
-                                echo "";
+                                return 73;
                                 break;
                         }
                         break;
 
-                    case "NOT SERIAL RAPIST":
+                    case 6:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 74;
                                 break;
                             case 1:
-                                echo "";
+                                return 75;
                                 break;
                             case 2:
-                                echo "";
+                                return 76;
                                 break;
                         }
                         break;
 
-                    case "NOT MENTAL PATIENT":
+                    case 7:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 77;
                                 break;
                             case 1:
-                                echo "";
+                                return 78;
                                 break;
                             case 2:
-                                echo "";
+                                return 79;
                                 break;
                         }
                         break;
 
-                    case "wretched man":
+                    case 8:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 80;
                                 break;
                             case 1:
-                                echo "";
+                                return 81;
                                 break;
                             case 2:
-                                echo "";
+                                return 82;
                                 break;
                         }
                         break;
@@ -685,113 +579,107 @@ class Event extends Character{
                 }
                 break;
 
-            //first user is NOT DRUG DEALER
+            //first user is upstanding citizen
 
-            case "NOT SERIAL RAPIST":
+            case 6:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
+                    case 1:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 83;
                                 break;
                             case 1:
-                                echo "";
+                                return 84;
                                 break;
                             case 2:
-                                echo "";
+                                return 85;
                                 break;
                         }
                         break;
 
-                    case "greedy dragon":
+                    case 3:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 86;
                                 break;
                             case 1:
-                                echo "";
+                                return 87;
                                 break;
                             case 2:
-                                echo "";
+                                return 88;
                                 break;
                         }
                         break;
 
-                    case "derek reilly":
+                    case 2:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 89;
                                 break;
                         }
                         break;
 
-                    case "eligible bachelor":
+                    case 5:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 90;
                                 break;
                             case 1:
-                                echo "";
+                                return 91;
                                 break;
                             case 2:
-                                echo "";
+                                return 92;
                                 break;
                         }
                         break;
 
-                    case "NOT DRUG DEALER":
+                    case 4:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 93;
                                 break;
                             case 1:
-                                echo "";
+                                return 94;
                                 break;
                             case 2:
-                                echo "";
+                                return 95;
                                 break;
                         }
                         break;
 
-                    case "NOT MENTAL PATIENT":
+                    case 7:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 96;
                                 break;
                             case 1:
-                                echo "";
+                                return 97;
                                 break;
                             case 2:
-                                echo "";
+                                return 98;
                                 break;
                         }
                         break;
 
-                    case "wretched man":
+                    case 8:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 99;
                                 break;
                             case 1:
-                                echo "";
+                                return 100;
                                 break;
                             case 2:
-                                echo "";
+                                return 101;
                                 break;
                         }
                         break;
@@ -799,113 +687,107 @@ class Event extends Character{
                 }
                 break;
 
-            //first user is NOT MENTAL PATIENT
+            //first user is crazy person
 
-            case "NOT MENTAL PATIENT":
+            case 7:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
+                    case 1:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 102;
                                 break;
                             case 1:
-                                echo "";
+                                return 103;
                                 break;
                             case 2:
-                                echo "";
+                                return 104;
                                 break;
                         }
                         break;
 
-                    case "greedy dragon":
+                    case 3:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 105;
                                 break;
                             case 1:
-                                echo "";
+                                return 106;
                                 break;
                             case 2:
-                                echo "";
+                                return 107;
                                 break;
                         }
                         break;
 
-                    case "derek reilly":
+                    case 2:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 108;
                                 break;
                         }
                         break;
 
-                    case "eligible bachelor":
+                    case 5:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 109;
                                 break;
                             case 1:
-                                echo "";
+                                return 110;
                                 break;
                             case 2:
-                                echo "";
+                                return 111;
                                 break;
                         }
                         break;
 
-                    case "NOT SERIAL RAPIST":
+                    case 6:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 112;
                                 break;
                             case 1:
-                                echo "";
+                                return 113;
                                 break;
                             case 2:
-                                echo "";
+                                return 114;
                                 break;
                         }
                         break;
 
-                    case "NOT DRUG DEALER":
+                    case 4:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 115;
                                 break;
                             case 1:
-                                echo "";
+                                return 116;
                                 break;
                             case 2:
-                                echo "";
+                                return 117;
                                 break;
                         }
                         break;
 
-                    case "wretched man":
+                    case 8:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 118;
                                 break;
                             case 1:
-                                echo "";
+                                return 119;
                                 break;
                             case 2:
-                                echo "";
+                                return 120;
                                 break;
                         }
                         break;
@@ -915,111 +797,105 @@ class Event extends Character{
 
             //first user is wretched man
 
-            case "wretched man":
+            case 8:
 
-                switch($this->char2->getCharaName())
+                switch($this->char2->getCharaID())
                 {
-                    case "pikachu":
+                    case 1:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 121;
                                 break;
                             case 1:
-                                echo "";
+                                return 122;
                                 break;
                             case 2:
-                                echo "";
+                                return 123;
                                 break;
                         }
                         break;
 
-                    case "greedy dragon":
+                    case 3:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 124;
                                 break;
                             case 1:
-                                echo "";
+                                return 125;
                                 break;
                             case 2:
-                                echo "";
+                                return 126;
                                 break;
                         }
                         break;
 
-                    case "derek reilly":
+                    case 2:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
-                                break;
-                            case 1:
-                                echo "";
-                                break;
-                            case 2:
-                                echo "";
+                                return 127;
                                 break;
                         }
                         break;
 
-                    case "eligible bachelor":
+                    case 5:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 128;
                                 break;
                             case 1:
-                                echo "";
+                                return 129;
                                 break;
                             case 2:
-                                echo "";
+                                return 130;
                                 break;
                         }
                         break;
 
-                    case "NOT SERIAL RAPIST":
+                    case 6:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 131;
                                 break;
                             case 1:
-                                echo "";
+                                return 132;
                                 break;
                             case 2:
-                                echo "";
+                                return 133;
                                 break;
                         }
                         break;
 
-                    case "NOT MENTAL PATIENT":
+                    case 7:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 134;
                                 break;
                             case 1:
-                                echo "";
+                                return 135;
                                 break;
                             case 2:
-                                echo "";
+                                return 136;
                                 break;
                         }
                         break;
 
-                    case "NOT DRUG DEALER":
+                    case 4:
                         switch(rand(0,2))
                         {
                             case 0:
-                                echo "";
+                                return 137;
                                 break;
                             case 1:
-                                echo "";
+                                return 138;
                                 break;
                             case 2:
-                                echo "";
+                                return 139;
                                 break;
                         }
                         break;

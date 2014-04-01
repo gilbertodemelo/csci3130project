@@ -13,7 +13,7 @@ window.onload = function(){
 
 
 //Send JSON object using XMLHttp
-var request = new XMLHttpRequest("POST", "Location.php?latitude="+pos.coords.latitude+"&longitude="+pos.coords.longitude, true);
+var request = new XMLHttpRequest("POST", "locationtest.php?latitude="+pos.coords.latitude+"&longitude="+pos.coords.longitude, true);
 
 function showError(error){
     switch(error.code){

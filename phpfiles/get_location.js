@@ -15,7 +15,7 @@ function sendPosition(pos){
 function showError(error){
     switch(error.code){
         case error.PERMISSION_DENIED:
-            alert("User denised the request for Geolocation");
+            alert("User denied the request for Geolocation");
             break;
         case error.POSITION_UNAVAILABLE:
             alert("Location information is unavailable.");

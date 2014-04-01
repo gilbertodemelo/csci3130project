@@ -1,42 +1,32 @@
 <?php
 
 
-class Location {
-
-    //attributes
-    private $latitude;
-    private $longitude;
-
-    //constructor
-    function __construct($latitude, $longitude){
-        $this->latitude = $latitude;
-        $this->longitude= $longitude;
+    if(mysqli_connect_errno()) {
+        echo "Error: Could not connect to database. ";
+        exit;
     }
 
-    //set methods
-    function setLatitude($latitude){
-        $this->latitude = $latitude;
+    $lat = $_POST['latitude'];
+    $long = $_POST['longitude'];
+
+    if(!$lat || !$long) {
+        echo "You have not entered all the required details. ";
+        exit;
     }
 
-    function setLongitude($longitude){
-        $this->longitude = $longitude;
+    $connection = new mysqli('localhost', 'group14', 'group14', 'group14');
+
+    if(mysqli_connect_errno()) {
+        echo "Error: Could not connect to database. ";
+        exit;
     }
 
-    //get methods
-    function getLatitude(){
+    $minLatitudeQuery = "INSERT INTO group14.user WHERE VALUES '.$lat.' ";
 
-       echo "Latitude: ".$_GET['latitude'];
+    //$maxLatitudeQuery = "INSERT INTO group14.location.xlarge VALUES"
 
-    }
+    $longitudeQuery = "INSERT INTO group14.location.where VALUES '.$long.'";
 
-    function getLongitude(){
-
-        echo "Longitude: ".$_GET['longitude'];
-    }
-
-    function __toString(){
-        return "" + getLongitude() + getLatitude;
-    }
-} //end of class
+    $connection -> close();
 
 ?>

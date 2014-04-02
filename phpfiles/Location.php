@@ -1,4 +1,4 @@
-<?php
+<<?php
 
 
     if(mysqli_connect_errno()) {
@@ -20,12 +20,19 @@
         echo "Error: Could not connect to database. ";
         exit;
     }
+    //inserts user's latitude into database
+    $latitude = "INSERT INTO group14.user WHERE VALUES '.$x.' ";
+    $result = $connection->query($latitude);
 
-    $minLatitudeQuery = "INSERT INTO group14.user WHERE VALUES '.$lat.' ";
+    //inserts user's longitude into database
+    $longitude = "INSERT INTO group14.user VALUES '.$y.'";
+    $result = $connection->query($longitude);
 
-    //$maxLatitudeQuery = "INSERT INTO group14.location.xlarge VALUES"
-
-    $longitudeQuery = "INSERT INTO group14.location.where VALUES '.$long.'";
+    if($result) {
+        echo "Updated";
+    } else {
+        echo "not updated";
+    }
 
     $connection -> close();
 

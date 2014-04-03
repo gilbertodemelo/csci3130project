@@ -16,7 +16,8 @@ $(document).ready(function() {
 	});
 	$('#b').click(function() {
 		if(!b_on) {
-			$(this).append('<p id = \'b_de\'>instruction2</p>');
+			$(this).append('<p id = \'b_de\'>Generic Game #1067 is a game that allows a user to interact with his/her friends by simply moving around
+the Dalhousie Campus. Just open the game as soon as you are on campus, and you will be playing!</p>');
 			$(this).css('color', '#B6AEF2');
 			b_on = 1;
 		} else {

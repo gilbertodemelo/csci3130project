@@ -14,10 +14,11 @@ $(document).ready(function() {
         success: function(response) {
             info = eval(response);
             // display_profile();
+            $('#photo').html('<img src = \'../images/characters/' + info[1].head + '\' />');
             $('#points').text(info[0].points);
             $('#character_name').text(info[1].name);
             $('#position').text(info[0].position);
-            $('#picture').html('<img src = \'../images/' + info[1].head + '\' />');
+            $('#picture').html('<img src = \'../images/characters/' + info[1].img + '\' />');
             $('#description').text(info[1].intro);
             $('#recent_event').text(info[0].event);
 

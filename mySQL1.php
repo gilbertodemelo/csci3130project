@@ -46,7 +46,7 @@ function register($uname, $password, $email, $phone) {
 			mysql_query(
 				'SELECT count(*) FROM group14.character'));
 		$c_id = rand(1, $c_num[0]);
-		mysql_query('INSERT INTO group14.user VALUES (\''.$num.'\', \''.$uname.'\', \''.$email.'\', \''.$password.'\', \'0\',\''.$c_id.'\', \'0\', \'0\', \''.$phone.'\')');
+		mysql_query('INSERT INTO group14.user VALUES (\''.$num.'\', \''.$uname.'\', \''.$email.'\', \''.$password.'\', \'0\',\''.$c_id.'\', \'0.2\', \'0.2\', \''.$phone.'\')');
 		mysql_query('INSERT INTO group14.friendList (id) VALUES (\''.$num.'\')');
 		mysql_query('INSERT INTO group14.eventList (user_id) VALUES (\''.$num.'\')');
 		echo 'Register successful';

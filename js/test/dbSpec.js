@@ -1,7 +1,10 @@
-describe('Location Website Test for Iteration 2', function() {
+describe('Location Website Test for Iteration 3', function() {
 	var PHP1 = 'mySQL1.php';
 	var PHP2 = 'mySQL2.php';
-
+	/**
+	 * check login in
+	 * @return {[type]} [description]
+	 */
 	describe('Index Page Test', function() {
 		var username = "TESTER";
 		var password ="group14";
@@ -24,7 +27,10 @@ describe('Location Website Test for Iteration 2', function() {
 	            }
 	        });
 		});
-
+		/**
+		 * if password doean't match
+		 * @return {[type]} [description]
+		 */
 		it('invalid password', function() {
 
 			$.ajax({
@@ -41,7 +47,10 @@ describe('Location Website Test for Iteration 2', function() {
 	            }
 	        });
 		});
-
+		/**
+		 * if correct username and password are input
+		 * @return {[type]} [description]
+		 */
 		it('correct username/password', function() {
 
 			$.ajax({
@@ -63,7 +72,10 @@ describe('Location Website Test for Iteration 2', function() {
 	
 	describe('Main Page Test', function() {
 		var friend_list;
-
+		/**
+		 * information display correctly on main page
+		 * @return {[type]} [description]
+		 */
 		it('friend/user names on map match their nicknames', function() {
 			$.ajax({
 	            type: 'POST',
@@ -81,7 +93,10 @@ describe('Location Website Test for Iteration 2', function() {
 	            }
       		});
 		});
-
+		/**
+		 * locations matches
+		 * @return {[type]} [description]
+		 */
 		it('friend/user positions on map match their real positions', function() {
 			$.ajax({
 	            type: 'POST',
@@ -107,7 +122,10 @@ describe('Location Website Test for Iteration 2', function() {
 	});
 	
 	describe('Profile Page Test', function() {
-
+		/**
+		 * display correct user information
+		 * @return {[type]} [description]
+		 */
 		it('User profile information is loaded correctly', function() {
 			$.ajax({
 		        type: 'POST',
@@ -127,7 +145,10 @@ describe('Location Website Test for Iteration 2', function() {
 		        }
 		    });
 		});
-
+		/**
+		 * the character information is correct
+		 * @return {[type]} [description]
+		 */
 		it('User character information is loaded correctly', function() {
 			$.ajax({
 		        type: 'POST',
@@ -147,6 +168,10 @@ describe('Location Website Test for Iteration 2', function() {
 	});
 	
 	describe('Social Page Test', function() {
+		/**
+		 * The friend list is loaded correctly
+		 * @return {[type]} [description]
+		 */
 		it('the friend list is loaded correctly', function() {
 			$.ajax({
 		        type: 'POST',
@@ -167,6 +192,10 @@ describe('Location Website Test for Iteration 2', function() {
 	});	
 
 	describe('Friends Management Test', function() {
+		/**
+		 * search friends function works correctly
+		 * @return {[type]} [description]
+		 */
 		it('User is able to search and add new friend', function() {
 			$.ajax({
 	            type: 'POST',
@@ -182,7 +211,10 @@ describe('Location Website Test for Iteration 2', function() {
 	            }
       	    });
 		});
-
+		/**
+		 * delete friends
+		 * @return {[type]} [description]
+		 */
 		it('User is able to delete friends', function() {
 			$.ajax({
                 type: 'POST',

@@ -2,7 +2,11 @@ $(document).ready(function() {
 
     var uid  = localStorage.getItem('uid');
 	var info;
-
+    /**
+     * ajax function to call get_profile function 
+     * @param  {json} response) {                       info = eval(response);            display_character();        }    } [description]
+     * @return           
+     */
     $.ajax({
         type: 'POST',
         url:  '../mySQL2.php',
@@ -16,6 +20,10 @@ $(document).ready(function() {
         	display_character();
         }
     });
+    /**
+     * display the basic information of the character of the user today
+     * @return 
+     */
     function display_character() {
         $('#header').html('<a href = \'profile.html\'><div id = \'back\' data-icon = \'i\'></div></a>' + 
         	              '<p id =\'name\'>' + info[1].name + '</p>' + 

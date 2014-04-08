@@ -3,6 +3,10 @@ $(document).ready(function() {
 	var b_on = 0;
 	var c_on = 0;
 	var d_on = 0;
+	/**
+	 * Introduction to this  game
+	 * @return {[type]} [description]
+	 */
 	$('#a').click(function() {
 		if(!a_on) {
 			$(this).append('<p id = \'a_de\'>hello</p>');
@@ -14,6 +18,10 @@ $(document).ready(function() {
 			a_on = 0;
 		}
 	});
+	/**
+	 * How to play this game
+	 * @return {[type]} [description]
+	 */
 	$('#b').click(function() {
 		if(!b_on) {
 			$(this).append('<p id = \'b_de\'>Generic Game #1067 is a game that allows a user to interact with his/her friends by simply moving around
@@ -26,6 +34,10 @@ the Dalhousie Campus. Just open the game as soon as you are on campus, and you w
 			b_on = 0;
 		}
 	});
+	/**
+	 * How to gain points
+	 * @return {[type]} [description]
+	 */
 	$('#c').click(function() {
 		if(!c_on) {
 			$(this).append('<p id = \'c_de\'>instruction3</p>');
@@ -37,6 +49,10 @@ the Dalhousie Campus. Just open the game as soon as you are on campus, and you w
 			c_on = 0;
 		}
 	});
+	/**
+	 * Who is derek reilly
+	 * @return {[type]} [description]
+	 */
 	$('#d').click(function() {
 		if(!d_on) {
 			$(this).append('<p id = \'d_de\'>instruction4</p>');

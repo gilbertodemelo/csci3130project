@@ -7,7 +7,10 @@ $(document).ready(function() {
         var email = $('.email').val();
         var phone = $('.phone').val();
 
-
+        /**
+         * register 
+         * @type {[type]}
+         */
         if (username == '') {
             $('#error').html("<br/>username needed");
             return false;
@@ -28,6 +31,9 @@ $(document).ready(function() {
                 dataType: 'text',
                 success: function(response) {
                     if (response === "Username Exists") {
+                        /**
+                         * if username already exist
+                         */
                          $('#error').html("<br/>Username Exists");
                     } else {
                         $('#error').html("<br/>"+response);

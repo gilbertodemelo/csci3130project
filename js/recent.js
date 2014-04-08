@@ -10,6 +10,10 @@ $(document).ready(function() {
         dataType: 'json',
         success: function(response) {
             info = eval(response);
+            /**
+             * display user's recent events
+             * @type {[type]}
+             */
             $('#picture').html('<img src=\'../images/characters/' + info[0].head + '\' id =\'photo\'/>');
             $('#name').text(info[0].name);
             $('#points').text(info[0].points);

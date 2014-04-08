@@ -16,6 +16,10 @@ $(document).ready(function() {
         	display_profile();
         }
     });
+    /**
+     * display user infomation
+     * @return {[type]} [description]
+     */
     function display_profile() {
         $('#header').html('<img src=\'../images/characters/' + info[1].head + '\' id =\'photo\'/>' + 
         	              '<p id =\'name\'>' + info[0].username + '</p>' + 

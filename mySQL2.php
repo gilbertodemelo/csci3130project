@@ -8,7 +8,11 @@ if (!$con) {
   die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("group14", $con);
-
+/**
+ * get user's geographic information
+ * @param  [num] $uid user id
+ * @return [json]username and positions
+ */
 function get_geo_info($uid) {
 	$user_rows = 
 		mysql_fetch_row(
@@ -19,7 +23,11 @@ function get_geo_info($uid) {
 							   'y'        => $user_rows[7]);
  	return $user_info;
 }
-
+/**
+ * get id of the user based on his username
+ * @param  [type] $uname [usernmae]
+ * @return [type]        [description]
+ */
 function get_user_id($uname) {
 	$uid = 
 		mysql_fetch_row(
@@ -27,7 +35,11 @@ function get_user_id($uname) {
 			'SELECT userid FROM group14.user WHERE username = \''.$uname.'\''));
 	return $uid[0];
 }
-
+/**
+ * get the friend list of user with specific user if
+ * @param  [num] $uid the userid
+ * @return [array]    the list of friends 
+ */
 function get_id_list($uid) {
 	$friend_id_list = 
 		mysql_fetch_row(
@@ -35,7 +47,12 @@ function get_id_list($uid) {
 	array_shift($friend_id_list);
 	return $friend_id_list;
 }
-
+/**
+ * get the basic informtaion of friends
+ * this is used in the main page where only 
+ * @param  [num ] $uid user id 
+ * @return [json]      an array of json data contains the geo locatiosn and friends' names
+ */
 function get_friend_info($uid) {
 	$friend_info = 
 		mysql_fetch_row(
@@ -49,7 +66,12 @@ function get_friend_info($uid) {
    	$json_result = json_encode($friend_list);       
 	echo $json_result;
 }
-
+/**
+ * get the location (game) based on longitude and laltitude
+ * @param  [num ] $x longitude
+ * @param  [num ] $y laltitude
+ * @return [text]    the corresponding location
+ */
 function get_user_location($x, $y) {
 	for ($i = 1; $i <= 19; $i++) {
 		$location = 
@@ -64,7 +86,11 @@ function get_user_location($x, $y) {
 	}
 	return "country road";
 }
-
+/**
+ * get the character information based on character id
+ * @param  [num ] $cid the character id
+ * @return [json]      the json data containing character information
+ */
 function get_character_info($cid) {
 	$character = 
 		mysql_fetch_row(
@@ -77,7 +103,11 @@ function get_character_info($cid) {
 					        'intro'=>$character[2]);
 	return $character_info;
 }
-
+/**
+ * get the profile information of a user, contains both account info and character info
+ * @param  [num ] $uid [the user id]
+ * @return [json]      [the json data containing user information]
+ */
 function get_user_info($uid) {
 	$user = 
 		mysql_fetch_row(
@@ -96,7 +126,11 @@ function get_user_info($uid) {
 					 'event' => $last_event);
 	return $profile;
 }
-
+/**
+ * get the profile
+ * @param  [num ] $uid 
+ * @return [json] profile information
+ */
 function get_profile($uid) {
 	$profile = 
 		get_user_info($uid); 
@@ -106,11 +140,20 @@ function get_profile($uid) {
 	$json_info = json_encode($info);
 	echo $json_info;
 }
-
+/**
+ * the header profile in each page, only head img and username is needed
+ * @param  [uname] $uname [username]
+ * @return [json ]        
+ */
 function get_profile2($uname) {
 	$uid = get_user_id($uname);
 	echo get_profile($uid);
 }
+/**
+ * get the last event of friend
+ * @param  [num ] $uid user id 
+ * @return [text]      the last event
+ */
 function get_last_event($uid) {
 	$event_list = 
 		mysql_fetch_row(
@@ -122,7 +165,11 @@ function get_last_event($uid) {
 			'SELECT event FROM group14.events WHERE id = '.$event_list[0].''));
 	return $event[0];
 }
-
+/**
+ * get the list of friends with corresponding information
+ * @param  [uid ] $uid [user id]
+ * @return [json]      [the array of json data containing friends information]
+ */
 function get_friend_list($uid) {
 	$friend_id_list = 
 		get_id_list($uid);
@@ -147,6 +194,12 @@ function get_friend_list($uid) {
 	$friend_json = json_encode($friends);
 	echo $friend_json;
 }
+/**
+ * search friend function
+ * @param  [num ] $uid   the user id
+ * @param  [text] $fname the name of the user you want to search
+ * @return [text] user not exist/don't add yourself/add successful       
+ */
 function search_friend($uid, $fname) {
 	$fid = 
 		get_user_id($fname);
@@ -175,7 +228,12 @@ function search_friend($uid, $fname) {
 	}
 	echo $result;
 }
-
+/**
+ * get the events list displayed in recent events
+ * @param  [num ] $uid user id
+ * @return [json]      get the list of recent events, containing events, points
+ *                     and it direction (+/-)
+ */
 function get_event_list($uid) {
 	$event_list = 
 		mysql_fetch_row(
@@ -214,7 +272,12 @@ function get_event_list($uid) {
 	$event_json = json_encode($recent);
 	echo $event_json;
 }
-
+/**
+ * delete friend
+ * @param  [num ] $uid   [user id]
+ * @param  [text] $fname [the friend user]
+ * @return [num ]        [the friend id]
+ */
 function delete_friend($uid, $fname) {
 	$fid = 
 		get_user_id($fname);

@@ -8,7 +8,11 @@ if (!$con) {
   die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("group14", $con);
-
+/**
+ * get user id based on username
+ * @param  [text] $uname [the username]
+ * @return [int]        [user id]
+ */
 function get_user_id($uname) {
 	$uid = 
 		mysql_fetch_row(
@@ -16,7 +20,12 @@ function get_user_id($uname) {
 			'SELECT userid FROM group14.user WHERE username = \''.$uname.'\''));
 	echo $uid[0];
 }
-
+/**
+ * login check
+ * @param  [text] $uname [user input username]
+ * @param  [text] $pwd   [user input password]
+ * @return [login result]        
+ */
 function login($uname, $pwd) {
 	$password = 
 		mysql_fetch_row(
@@ -27,7 +36,14 @@ function login($uname, $pwd) {
 	else 
 		echo 'false';
 }
-
+/**
+ * register
+ * @param  [text] $uname    [username]
+ * @param  [text] $password [user password]
+ * @param  [text] $email    [email]
+ * @param  [text] $phone    [phone number]
+ * @return [register result]         
+ */
 function register($uname, $password, $email, $phone) {
 	$user_id = 
 		mysql_fetch_row(

@@ -17,12 +17,21 @@ $(document).ready(function() {
                 localStorage.setItem('uid', response);
             }
         });
-
+        /**
+         * if userinput is none
+         * @type {[type]}
+         */
         if (username == '') {
             $('#error').append("username needed</br>");
             $('#error').fadeIn('fast');
             return false;
-        } else if (password == '') {
+
+        }
+        /**
+         * if password is none
+         * @type {[type]}
+         */
+        else if (password == '') {
             $('#error').html("password needed</br>");
             $('#error').fadeIn('fast');
             return false;
@@ -42,6 +51,9 @@ $(document).ready(function() {
                         $('#error').fadeIn('fast');
                         window.location = 'pages/main.html';
                     } else {
+                        /**
+                         * if username and password don't match
+                         */
                         $('#error').html("invalid username/password<br/>")
                         $('#error').fadeIn('fast');
                     }
